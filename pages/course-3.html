@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Advanced Physics for Third Year — electromagnetism, modern physics, energy systems, and circuit analysis with full video lessons, curriculum, and exam-focused practice." />
+  <meta name="author" content="Mr. Ahmed Hassan" />
+  <title>Advanced Physics | Third Year Course | Mr. Ahmed Hassan</title>
+
+  <!-- ═══════════════════════════════════════════
+       FONTS
+  ═══════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+
+  <!-- Favicon placeholder (inline SVG as data URI) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       LOADING SCREEN
+  ═══════════════════════════════════════════ -->
+  <div id="loading-screen" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="4" y="14" width="52" height="36" rx="4" fill="currentColor" opacity="0.15"/>
+          <path d="M30 18 L30 46" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M8 20 Q19 16 30 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M8 28 Q19 24 30 28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M8 36 Q19 32 30 36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M52 20 Q41 16 30 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M52 28 Q41 24 30 28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M52 36 Q41 32 30 36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="loader-bar-track">
+        <div class="loader-bar-fill" id="loader-bar"></div>
+      </div>
+      <p class="loader-text" id="loader-text" data-en="Loading course…" data-ar="جارٍ تحميل الدورة…">Loading course…</p>
+    </div>
+  </div>
+  <!-- /LOADING SCREEN -->
+
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <header class="site-header" id="site-header" role="banner">
+    <nav class="nav-container" aria-label="Main navigation">
+
+      <!-- Brand -->
+      <a href="../index.html" class="nav-brand" aria-label="Go to homepage">
+        <div class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="10" fill="currentColor" opacity="0.12"/>
+            <path d="M18 8 L18 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M7 12 Q12.5 9 18 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M7 18 Q12.5 15 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M7 24 Q12.5 21 18 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M29 12 Q23.5 9 18 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M29 18 Q23.5 15 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M29 24 Q23.5 21 18 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name" data-en="Mr. Ahmed Hassan" data-ar="أ. أحمد حسن">Mr. Ahmed Hassan</span>
+          <span class="brand-subtitle" data-en="Educational Platform" data-ar="المنصة التعليمية">Educational Platform</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="nav-links" role="list">
+        <li><a href="../index.html" class="nav-link" data-en="Home" data-ar="الرئيسية">Home</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false"
+                  data-en="Years" data-ar="السنوات">
+            Years
+            <svg class="chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="dropdown-menu" role="list">
+            <li>
+              <a href="first-year.html" class="dropdown-link">
+                <span class="dropdown-icon" aria-hidden="true">①</span>
+                <span data-en="First Year" data-ar="الصف الأول">First Year</span>
+              </a>
+            </li>
+            <li>
+              <a href="second-year.html" class="dropdown-link">
+                <span class="dropdown-icon" aria-hidden="true">②</span>
+                <span data-en="Second Year" data-ar="الصف الثاني">Second Year</span>
+              </a>
+            </li>
+            <li>
+              <a href="third-year.html" class="dropdown-link active" aria-current="page">
+                <span class="dropdown-icon" aria-hidden="true">③</span>
+                <span data-en="Third Year" data-ar="الصف الثالث">Third Year</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../index.html#about" class="nav-link" data-en="About" data-ar="عن المعلم">About</a></li>
+        <li><a href="#reviews" class="nav-link" data-en="Reviews" data-ar="التقييمات">Reviews</a></li>
+        <li><a href="../index.html#contact" class="nav-link" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+      </ul>
+
+      <!-- Nav Controls -->
+      <div class="nav-controls">
+
+        <!-- Language Toggle -->
+        <button class="ctrl-btn lang-toggle" id="lang-toggle" aria-label="Switch to Arabic language">
+          <span class="lang-label" id="lang-label">عربي</span>
+        </button>
+
+        <!-- Dark Mode Toggle -->
+        <button class="ctrl-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <!-- Login -->
+        <a href="login.html" class="btn btn-outline btn-sm" data-en="Login" data-ar="تسجيل الدخول">Login</a>
+
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+      <ul class="mobile-nav-links" role="list">
+        <li><a href="../index.html" class="mobile-nav-link" data-en="Home" data-ar="الرئيسية">Home</a></li>
+        <li>
+          <button class="mobile-nav-link mobile-accordion-trigger" aria-expanded="true"
+                  data-en="Years" data-ar="السنوات">
+            Years
+            <svg class="chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-sub-menu" role="list">
+            <li><a href="first-year.html" class="mobile-sub-link" data-en="First Year" data-ar="الصف الأول">First Year</a></li>
+            <li><a href="second-year.html" class="mobile-sub-link" data-en="Second Year" data-ar="الصف الثاني">Second Year</a></li>
+            <li><a href="third-year.html" class="mobile-sub-link active" aria-current="page" data-en="Third Year" data-ar="الصف الثالث">Third Year</a></li>
+          </ul>
+        </li>
+        <li><a href="../index.html#about" class="mobile-nav-link" data-en="About" data-ar="عن المعلم">About</a></li>
+        <li><a href="#reviews" class="mobile-nav-link" data-en="Reviews" data-ar="التقييمات">Reviews</a></li>
+        <li><a href="../index.html#contact" class="mobile-nav-link" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+        <li class="mobile-nav-cta">
+          <a href="login.html" class="btn btn-primary btn-full" data-en="Login" data-ar="تسجيل الدخول">Login</a>
+        </li>
+        <li class="mobile-nav-cta">
+          <a href="register.html" class="btn btn-outline btn-full" data-en="Register Now" data-ar="سجّل الآن">Register Now</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /Mobile Menu -->
+
+  </header>
+  <!-- /NAVIGATION -->
+
+
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════════
+         BREADCRUMB
+    ═══════════════════════════════════════════ -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="container breadcrumb-inner">
+        <ol class="breadcrumb-list">
+          <li><a href="../index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+          <li class="breadcrumb-sep" aria-hidden="true">/</li>
+          <li><a href="third-year.html" data-en="Third Year" data-ar="الصف الثالث">Third Year</a></li>
+          <li class="breadcrumb-sep" aria-hidden="true">/</li>
+          <li aria-current="page" data-en="Advanced Physics" data-ar="الفيزياء المتقدمة">Advanced Physics</li>
+        </ol>
+      </div>
+    </nav>
+    <!-- /BREADCRUMB -->
+
+
+    <!-- ═══════════════════════════════════════════
+         COURSE HERO
+    ═══════════════════════════════════════════ -->
+    <section class="course-hero" id="course-hero" aria-labelledby="course-hero-heading">
+      <div class="hero-grid-bg" aria-hidden="true">
+        <div class="grid-line grid-line--h" style="top:25%"></div>
+        <div class="grid-line grid-line--h" style="top:70%"></div>
+        <div class="grid-line grid-line--v" style="left:20%"></div>
+        <div class="grid-line grid-line--v" style="left:80%"></div>
+        <div class="grid-orb grid-orb--1" aria-hidden="true"></div>
+      </div>
+
+      <div class="container course-hero-inner">
+
+        <!-- Info Column -->
+        <div class="course-hero-content" data-animate="fade-up">
+          <span class="course-hero-badge course-hero-badge--popular" data-en="Third Year · Science · Most Enrolled" data-ar="الصف الثالث · علوم · الأكثر تسجيلاً">Third Year · Science · Most Enrolled</span>
+
+          <h1 class="course-hero-title" id="course-hero-heading"
+              data-en="Advanced Physics" data-ar="الفيزياء المتقدمة">Advanced Physics</h1>
+
+          <p class="course-hero-tagline"
+             data-en="Electromagnetism, modern physics, and energy systems — connected back to past exam questions."
+             data-ar="الكهرومغناطيسية، والفيزياء الحديثة، وأنظمة الطاقة — مرتبطة بأسئلة الامتحانات السابقة.">
+            Electromagnetism, modern physics, and energy systems — connected back to past exam questions.
+          </p>
+
+          <div class="course-hero-meta">
+            <div class="meta-pill">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2l2.5 5.5 6 .5-4.5 4 1.5 6-5.5-3.5L4.5 18l1.5-6L1.5 8l6-.5z" fill="currentColor"/></svg>
+              <strong>4.9</strong>
+              <span data-en="(245 ratings)" data-ar="(245 تقييم)">(245 ratings)</span>
+            </div>
+            <div class="meta-pill">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="14" cy="8" r="2.4" stroke="currentColor" stroke-width="1.6"/><path d="M2 17c0-3 2.5-5 5-5s5 2 5 5M12 17c0-2.3 1.6-4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <span><strong>940</strong> <span data-en="students enrolled" data-ar="طالب مسجّل">students enrolled</span></span>
+            </div>
+            <div class="meta-pill">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.6"/><path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <span data-en="Last updated May 2026" data-ar="آخر تحديث مايو 2026">Last updated May 2026</span>
+            </div>
+            <div class="meta-pill">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <span data-en="English & Arabic" data-ar="إنجليزي وعربي">English &amp; Arabic</span>
+            </div>
+          </div>
+
+          <div class="course-hero-instructor">
+            <div class="hcard-avatar hcard-avatar--sm" aria-hidden="true">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="40" fill="currentColor" opacity="0.08"/>
+                <circle cx="40" cy="30" r="14" fill="currentColor" opacity="0.5"/>
+                <ellipse cx="40" cy="64" rx="22" ry="14" fill="currentColor" opacity="0.4"/>
+              </svg>
+            </div>
+            <p>
+              <span data-en="Taught by" data-ar="يقدّمها">Taught by</span>
+              <a href="../index.html#about" data-en="Mr. Ahmed Hassan" data-ar="أ. أحمد حسن">Mr. Ahmed Hassan</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Video / Enroll Card Column -->
+        <div class="course-hero-card" data-animate="fade-left">
+          <div class="course-preview-player">
+            <img src="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=640&h=360&fit=crop" alt="" loading="lazy" />
+            <button class="course-preview-play" aria-label="Play course preview video">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+            </button>
+            <span class="course-preview-duration">2:30</span>
+          </div>
+          <div class="course-enroll-box">
+            <div class="course-enroll-price">
+              <strong>480</strong>
+              <span data-en="EGP / month" data-ar="ج.م / شهر">EGP / month</span>
+            </div>
+            <a href="register.html?course=advanced-physics" class="btn btn-primary btn-full" id="enroll-cta">
+              <span data-en="Enroll Now" data-ar="سجّل الآن">Enroll Now</span>
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="#curriculum" class="btn btn-ghost btn-full">
+              <span data-en="View Curriculum" data-ar="عرض المنهج">View Curriculum</span>
+            </a>
+            <ul class="course-enroll-includes" role="list">
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="5" width="14" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 8h14" stroke="currentColor" stroke-width="1.6"/></svg>
+                <span data-en="30 video lessons (34 hours)" data-ar="30 درساً بالفيديو (34 ساعة)">30 video lessons (34 hours)</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span data-en="45+ past paper questions" data-ar="أكثر من 45 سؤال من أوراق سابقة">45+ past paper questions</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.6"/><path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                <span data-en="Lifetime access" data-ar="وصول مدى الحياة">Lifetime access</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2l6 3v5c0 4-3 7-6 8-3-1-6-4-6-8V5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                <span data-en="Certificate of completion" data-ar="شهادة إتمام">Certificate of completion</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- /COURSE HERO -->
+
+
+    <!-- ═══════════════════════════════════════════
+         COURSE DETAILS
+    ═══════════════════════════════════════════ -->
+    <section class="section course-details-section" id="overview" aria-labelledby="overview-heading">
+      <div class="container course-details-inner">
+
+        <!-- Main column -->
+        <div class="course-details-main">
+
+          <div data-animate="fade-up">
+            <h2 class="section-heading" id="overview-heading"
+                data-en="What You'll Learn" data-ar="ماذا ستتعلم">What You&rsquo;ll Learn</h2>
+            <ul class="learn-grid" role="list">
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span data-en="Analyze electric and magnetic fields and their interactions" data-ar="تحليل المجالات الكهربائية والمغناطيسية وتفاعلاتها">Analyze electric and magnetic fields and their interactions</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span data-en="Apply conservation of energy and momentum to solve problems" data-ar="تطبيق حفظ الطاقة والزخم لحل المسائل">Apply conservation of energy and momentum to solve problems</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span data-en="Analyze series and parallel circuits with confidence" data-ar="تحليل الدوائر المتسلسلة والمتوازية بثقة">Analyze series and parallel circuits with confidence</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span data-en="Explain key ideas in modern physics, from photons to nuclei" data-ar="شرح أفكار أساسية في الفيزياء الحديثة، من الفوتونات إلى النوى">Explain key ideas in modern physics, from photons to nuclei</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span data-en="Use formula sheets quickly and accurately under time pressure" data-ar="استخدام ورقات الصيغ بسرعة ودقة تحت ضغط الوقت">Use formula sheets quickly and accurately under time pressure</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span data-en="Answer full past-paper Physics questions with confidence" data-ar="الإجابة على أسئلة الفيزياء الكاملة من الأوراق السابقة بثقة">Answer full past-paper Physics questions with confidence</span>
+              </li>
+            </ul>
+          </div>
+
+          <div data-animate="fade-up">
+            <h2 class="section-heading" data-en="Course Description" data-ar="وصف الدورة">Course Description</h2>
+            <p class="course-description"
+               data-en="This is the most comprehensive Physics course on the platform, built to cover everything that appears on the Third Year final exam. We move from electromagnetism through energy and circuits to modern physics, with every concept demonstrated visually before you ever see a question on it. The final module is entirely past papers, so you walk in having already seen the exam in every way but the date."
+               data-ar="هذه أشمل دورة فيزياء على المنصة، مصمّمة لتغطي كل ما يظهر في امتحان الصف الثالث النهائي. ننتقل من الكهرومغناطيسية إلى الطاقة والدوائر ثم الفيزياء الحديثة، مع توضيح كل مفهوم بصرياً قبل أن تواجه أي سؤال عليه. الوحدة الأخيرة مخصصة بالكامل للأوراق السابقة، فتدخل الامتحان وكأنك رأيته من قبل بكل شيء سوى التاريخ.">
+              This is the most comprehensive Physics course on the platform, built to cover everything that appears on the Third Year final exam. We move from electromagnetism through energy and circuits to modern physics, with every concept demonstrated visually before you ever see a question on it. The final module is entirely past papers, so you walk in having already seen the exam in every way but the date.
+            </p>
+          </div>
+
+          <div data-animate="fade-up">
+            <h2 class="section-heading" data-en="Requirements" data-ar="المتطلبات">Requirements</h2>
+            <ul class="requirements-list" role="list">
+              <li data-en="Second Year Mechanics fundamentals" data-ar="أساسيات الميكانيكا من الصف الثاني">Second Year Mechanics fundamentals</li>
+              <li data-en="A scientific calculator" data-ar="حاسبة علمية">A scientific calculator</li>
+              <li data-en="Comfort with basic vector and trigonometry skills" data-ar="الراحة في أساسيات المتجهات وحساب المثلثات">Comfort with basic vector and trigonometry skills</li>
+            </ul>
+          </div>
+
+          <!-- ═══════════════════════════════════════
+               CURRICULUM
+          ═══════════════════════════════════════ -->
+          <div id="curriculum" data-animate="fade-up">
+            <h2 class="section-heading" data-en="Curriculum" data-ar="المنهج">Curriculum</h2>
+            <p class="curriculum-summary">
+              <span><strong>5</strong> <span data-en="modules" data-ar="وحدات">modules</span></span> ·
+              <span><strong>30</strong> <span data-en="lessons" data-ar="درساً">lessons</span></span> ·
+              <span><strong>34</strong> <span data-en="hours total" data-ar="ساعة إجمالاً">hours total</span></span>
+            </p>
+
+            <div class="module-accordion">
+
+              <!-- Module 1 -->
+              <div class="module-item">
+                <button class="module-header" aria-expanded="true">
+                  <span class="module-header-left">
+                    <span class="module-number">01</span>
+                    <span class="module-title" data-en="Electromagnetism" data-ar="الكهرومغناطيسية">Electromagnetism</span>
+                  </span>
+                  <span class="module-header-right">
+                    <span class="module-meta" data-en="8 lessons · 9h 20m" data-ar="8 دروس · 9س 20د">8 lessons · 9h 20m</span>
+                    <svg class="chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <ul class="lesson-list" role="list">
+                  <li class="lesson-item lesson-item--preview">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Electric Fields & Coulomb's Law" data-ar="المجالات الكهربائية وقانون كولوم">Electric Fields &amp; Coulomb&rsquo;s Law</span>
+                    <span class="lesson-tag" data-en="Preview" data-ar="معاينة">Preview</span>
+                    <span class="lesson-duration">14:10</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Electric Potential & Potential Energy" data-ar="الجهد الكهربائي وطاقة الجهد">Electric Potential &amp; Potential Energy</span>
+                    <span class="lesson-duration">17:00</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Magnetic Fields & Forces" data-ar="المجالات والقوى المغناطيسية">Magnetic Fields &amp; Forces</span>
+                    <span class="lesson-duration">18:30</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Electromagnetic Induction" data-ar="الحث الكهرومغناطيسي">Electromagnetic Induction</span>
+                    <span class="lesson-duration">19:15</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Faraday's Law & Lenz's Law" data-ar="قانون فاراداي وقانون لنز">Faraday&rsquo;s Law &amp; Lenz&rsquo;s Law</span>
+                    <span class="lesson-duration">16:45</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Transformers & Generators" data-ar="المحولات والمولدات">Transformers &amp; Generators</span>
+                    <span class="lesson-duration">15:20</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Electromagnetic Waves Overview" data-ar="نظرة عامة على الموجات الكهرومغناطيسية">Electromagnetic Waves Overview</span>
+                    <span class="lesson-duration">13:40</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span class="lesson-title" data-en="Practice Set: Electromagnetism" data-ar="مجموعة تمارين: الكهرومغناطيسية">Practice Set: Electromagnetism</span>
+                    <span class="lesson-duration">28 Q</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Module 2 -->
+              <div class="module-item">
+                <button class="module-header" aria-expanded="false">
+                  <span class="module-header-left">
+                    <span class="module-number">02</span>
+                    <span class="module-title" data-en="Energy & Momentum" data-ar="الطاقة والزخم">Energy &amp; Momentum</span>
+                  </span>
+                  <span class="module-header-right">
+                    <span class="module-meta" data-en="7 lessons · 7h 50m" data-ar="7 دروس · 7س 50د">7 lessons · 7h 50m</span>
+                    <svg class="chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <ul class="lesson-list" role="list" hidden>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Work & Kinetic Energy" data-ar="الشغل والطاقة الحركية">Work &amp; Kinetic Energy</span>
+                    <span class="lesson-duration">15:30</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Conservation of Energy" data-ar="حفظ الطاقة">Conservation of Energy</span>
+                    <span class="lesson-duration">17:10</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Momentum & Impulse" data-ar="الزخم والدفع">Momentum &amp; Impulse</span>
+                    <span class="lesson-duration">16:00</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Elastic & Inelastic Collisions" data-ar="التصادمات المرنة وغير المرنة">Elastic &amp; Inelastic Collisions</span>
+                    <span class="lesson-duration">18:45</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Power & Efficiency" data-ar="القدرة والكفاءة">Power &amp; Efficiency</span>
+                    <span class="lesson-duration">14:25</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Gravitational Potential Energy" data-ar="طاقة الوضع الجذبوية">Gravitational Potential Energy</span>
+                    <span class="lesson-duration">13:50</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span class="lesson-title" data-en="Practice Set: Energy & Momentum" data-ar="مجموعة تمارين: الطاقة والزخم">Practice Set: Energy &amp; Momentum</span>
+                    <span class="lesson-duration">24 Q</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Module 3 -->
+              <div class="module-item">
+                <button class="module-header" aria-expanded="false">
+                  <span class="module-header-left">
+                    <span class="module-number">03</span>
+                    <span class="module-title" data-en="Circuit Analysis" data-ar="تحليل الدوائر">Circuit Analysis</span>
+                  </span>
+                  <span class="module-header-right">
+                    <span class="module-meta" data-en="7 lessons · 7h 40m" data-ar="7 دروس · 7س 40د">7 lessons · 7h 40m</span>
+                    <svg class="chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <ul class="lesson-list" role="list" hidden>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Ohm's Law & Resistance" data-ar="قانون أوم والمقاومة">Ohm&rsquo;s Law &amp; Resistance</span>
+                    <span class="lesson-duration">14:00</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Series Circuits" data-ar="الدوائر المتسلسلة">Series Circuits</span>
+                    <span class="lesson-duration">16:20</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Parallel Circuits" data-ar="الدوائر المتوازية">Parallel Circuits</span>
+                    <span class="lesson-duration">17:05</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Kirchhoff's Laws" data-ar="قوانين كيرشوف">Kirchhoff&rsquo;s Laws</span>
+                    <span class="lesson-duration">19:30</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Capacitors in Circuits" data-ar="المكثفات في الدوائر">Capacitors in Circuits</span>
+                    <span class="lesson-duration">15:50</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Electrical Power & Safety" data-ar="القدرة الكهربائية والسلامة">Electrical Power &amp; Safety</span>
+                    <span class="lesson-duration">12:55</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span class="lesson-title" data-en="Practice Set: Circuits" data-ar="مجموعة تمارين: الدوائر">Practice Set: Circuits</span>
+                    <span class="lesson-duration">26 Q</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Module 4 -->
+              <div class="module-item">
+                <button class="module-header" aria-expanded="false">
+                  <span class="module-header-left">
+                    <span class="module-number">04</span>
+                    <span class="module-title" data-en="Modern Physics" data-ar="الفيزياء الحديثة">Modern Physics</span>
+                  </span>
+                  <span class="module-header-right">
+                    <span class="module-meta" data-en="5 lessons · 5h 30m" data-ar="5 دروس · 5س 30د">5 lessons · 5h 30m</span>
+                    <svg class="chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <ul class="lesson-list" role="list" hidden>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="The Photoelectric Effect" data-ar="التأثير الكهروضوئي">The Photoelectric Effect</span>
+                    <span class="lesson-duration">16:15</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Wave-Particle Duality" data-ar="ثنائية الموجة والجسيم">Wave-Particle Duality</span>
+                    <span class="lesson-duration">15:00</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Atomic Structure & Energy Levels" data-ar="التركيب الذري ومستويات الطاقة">Atomic Structure &amp; Energy Levels</span>
+                    <span class="lesson-duration">17:40</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Radioactivity & Half-Life" data-ar="النشاط الإشعاعي وعمر النصف">Radioactivity &amp; Half-Life</span>
+                    <span class="lesson-duration">18:10</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span class="lesson-title" data-en="Practice Set: Modern Physics" data-ar="مجموعة تمارين: الفيزياء الحديثة">Practice Set: Modern Physics</span>
+                    <span class="lesson-duration">16 Q</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Module 5 -->
+              <div class="module-item">
+                <button class="module-header" aria-expanded="false">
+                  <span class="module-header-left">
+                    <span class="module-number">05</span>
+                    <span class="module-title" data-en="Past Papers & Exam Practice" data-ar="الأوراق السابقة والتدريب على الامتحان">Past Papers &amp; Exam Practice</span>
+                  </span>
+                  <span class="module-header-right">
+                    <span class="module-meta" data-en="3 lessons · 3h 45m" data-ar="3 دروس · 3س 45د">3 lessons · 3h 45m</span>
+                    <svg class="chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <ul class="lesson-list" role="list" hidden>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="2024 Past Paper: Full Walkthrough" data-ar="ورقة امتحان 2024: حل كامل">2024 Past Paper: Full Walkthrough</span>
+                    <span class="lesson-duration">45:00</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Common Mistakes & How to Avoid Them" data-ar="الأخطاء الشائعة وكيفية تجنبها">Common Mistakes &amp; How to Avoid Them</span>
+                    <span class="lesson-duration">20:40</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span class="lesson-title" data-en="Timed Mock: Physics Paper" data-ar="امتحان تجريبي محسوب بالوقت: ورقة الفيزياء">Timed Mock: Physics Paper</span>
+                    <span class="lesson-duration">60:00</span>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sticky side column -->
+        <aside class="course-details-side">
+          <div class="instructor-mini-card" data-animate="fade-left">
+            <div class="hcard-avatar" aria-hidden="true">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="40" fill="currentColor" opacity="0.08"/>
+                <circle cx="40" cy="30" r="14" fill="currentColor" opacity="0.5"/>
+                <ellipse cx="40" cy="64" rx="22" ry="14" fill="currentColor" opacity="0.4"/>
+              </svg>
+            </div>
+            <p class="hcard-name" data-en="Mr. Ahmed Hassan" data-ar="أ. أحمد حسن">Mr. Ahmed Hassan</p>
+            <p class="hcard-role" data-en="Math & Science Teacher" data-ar="معلم رياضيات وعلوم">Math &amp; Science Teacher</p>
+            <p class="instructor-mini-bio"
+               data-en="10+ years teaching Math and Science, with a focus on turning exam fear into exam confidence."
+               data-ar="أكثر من 10 سنوات في تدريس الرياضيات والعلوم، مع تركيز على تحويل الخوف من الامتحان إلى ثقة فيه.">
+              10+ years teaching Math and Science, with a focus on turning exam fear into exam confidence.
+            </p>
+            <a href="../index.html#about" class="btn btn-outline btn-full btn-sm">
+              <span data-en="View Full Profile" data-ar="عرض الملف الكامل">View Full Profile</span>
+            </a>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+    <!-- /COURSE DETAILS -->
+
+
+    <!-- ═══════════════════════════════════════════
+         VIDEO PREVIEWS
+    ═══════════════════════════════════════════ -->
+    <section class="section video-previews-section" id="videos" aria-labelledby="videos-heading">
+      <div class="container">
+
+        <div class="section-header" data-animate="fade-up">
+          <p class="section-eyebrow" data-en="Watch Before You Enroll" data-ar="شاهد قبل التسجيل">Watch Before You Enroll</p>
+          <h2 class="section-heading" id="videos-heading"
+              data-en="Free Sample Lessons" data-ar="دروس مجانية للمعاينة">Free Sample Lessons</h2>
+        </div>
+
+        <div class="video-preview-grid">
+
+          <article class="video-preview-card" data-animate="fade-up" data-delay="0">
+            <button class="video-preview-thumb" aria-label="Play: Electric Fields & Coulomb's Law">
+              <img src="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=480&h=270&fit=crop" alt="" loading="lazy" />
+              <span class="video-preview-play" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              </span>
+              <span class="video-preview-duration">14:10</span>
+            </button>
+            <h3 class="video-preview-title" data-en="Electric Fields & Coulomb's Law" data-ar="المجالات الكهربائية وقانون كولوم">Electric Fields &amp; Coulomb&rsquo;s Law</h3>
+            <p class="video-preview-module" data-en="Module 1 · Electromagnetism" data-ar="الوحدة 1 · الكهرومغناطيسية">Module 1 · Electromagnetism</p>
+          </article>
+
+          <article class="video-preview-card" data-animate="fade-up" data-delay="80">
+            <button class="video-preview-thumb" aria-label="Play: Kirchhoff's Laws">
+              <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=480&h=270&fit=crop" alt="" loading="lazy" />
+              <span class="video-preview-play" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              </span>
+              <span class="video-preview-duration">19:30</span>
+            </button>
+            <h3 class="video-preview-title" data-en="Kirchhoff's Laws" data-ar="قوانين كيرشوف">Kirchhoff&rsquo;s Laws</h3>
+            <p class="video-preview-module" data-en="Module 3 · Circuit Analysis" data-ar="الوحدة 3 · تحليل الدوائر">Module 3 · Circuit Analysis</p>
+          </article>
+
+          <article class="video-preview-card" data-animate="fade-up" data-delay="160">
+            <button class="video-preview-thumb" aria-label="Play: 2024 Past Paper Walkthrough">
+              <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=480&h=270&fit=crop" alt="" loading="lazy" />
+              <span class="video-preview-play" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              </span>
+              <span class="video-preview-duration">45:00</span>
+            </button>
+            <h3 class="video-preview-title" data-en="2024 Past Paper: Full Walkthrough" data-ar="ورقة امتحان 2024: حل كامل">2024 Past Paper: Full Walkthrough</h3>
+            <p class="video-preview-module" data-en="Module 5 · Exam Practice" data-ar="الوحدة 5 · التدريب على الامتحان">Module 5 · Exam Practice</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+    <!-- /VIDEO PREVIEWS -->
+
+
+    <!-- ═══════════════════════════════════════════
+         REVIEWS
+    ═══════════════════════════════════════════ -->
+    <section class="section reviews-section" id="reviews" aria-labelledby="reviews-heading">
+      <div class="container">
+
+        <div class="section-header" data-animate="fade-up">
+          <p class="section-eyebrow" data-en="Student Feedback" data-ar="آراء الطلاب">Student Feedback</p>
+          <h2 class="section-heading" id="reviews-heading"
+              data-en="What Students Say About This Course" data-ar="ماذا يقول الطلاب عن هذه الدورة">What Students Say About This Course</h2>
+        </div>
+
+        <div class="reviews-grid">
+
+          <article class="testimonial-card" data-animate="fade-up" data-delay="0">
+            <div class="testimonial-quote-mark" aria-hidden="true">&ldquo;</div>
+            <p class="testimonial-text"
+               data-en="Circuits used to be my weakest topic. The Kirchhoff's Laws lesson made it click in one sitting."
+               data-ar="كانت الدوائر أضعف موضوع لدي. درس قوانين كيرشوف جعلها واضحة في جلسة واحدة.">
+              Circuits used to be my weakest topic. The Kirchhoff&rsquo;s Laws lesson made it click in one sitting.
+            </p>
+            <footer class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">A</div>
+              <div>
+                <p class="author-name" data-en="Ali H." data-ar="علي ح.">Ali H.</p>
+                <p class="author-year" data-en="Third Year Student" data-ar="طالب صف ثالث">Third Year Student</p>
+              </div>
+            </footer>
+          </article>
+
+          <article class="testimonial-card" data-animate="fade-up" data-delay="80">
+            <div class="testimonial-quote-mark" aria-hidden="true">&ldquo;</div>
+            <p class="testimonial-text"
+               data-en="Modern physics felt abstract until the atomic structure lesson connected it back to real exam diagrams."
+               data-ar="بدت الفيزياء الحديثة مجردة حتى ربطها درس التركيب الذري بمخططات امتحان حقيقية.">
+              Modern physics felt abstract until the atomic structure lesson connected it back to real exam diagrams.
+            </p>
+            <footer class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">D</div>
+              <div>
+                <p class="author-name" data-en="Dina W." data-ar="دينا و.">Dina W.</p>
+                <p class="author-year" data-en="Third Year Student" data-ar="طالب صف ثالث">Third Year Student</p>
+              </div>
+            </footer>
+          </article>
+
+          <article class="testimonial-card" data-animate="fade-up" data-delay="160">
+            <div class="testimonial-quote-mark" aria-hidden="true">&ldquo;</div>
+            <p class="testimonial-text"
+               data-en="The timed mock under real exam conditions showed me exactly where I was losing minutes. Fixed it before the real thing."
+               data-ar="الامتحان التجريبي المحسوب بالوقت أظهر لي بالضبط أين كنت أفقد دقائق. أصلحت ذلك قبل الامتحان الحقيقي.">
+              The timed mock under real exam conditions showed me exactly where I was losing minutes. Fixed it before the real thing.
+            </p>
+            <footer class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">T</div>
+              <div>
+                <p class="author-name" data-en="Tarek B." data-ar="طارق ب.">Tarek B.</p>
+                <p class="author-year" data-en="Third Year Student" data-ar="طالب صف ثالث">Third Year Student</p>
+              </div>
+            </footer>
+          </article>
+
+        </div>
+      </div>
+    </section>
+    <!-- /REVIEWS -->
+
+
+    <!-- ═══════════════════════════════════════════
+         ENROLLMENT SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="section enrollment-section" id="enroll" aria-labelledby="enroll-heading">
+      <div class="container enrollment-inner" data-animate="fade-up">
+        <div class="enrollment-card">
+          <div class="enrollment-card-main">
+            <p class="section-eyebrow" data-en="Ready When You Are" data-ar="جاهز عندما تكون مستعداً">Ready When You Are</p>
+            <h2 class="section-heading" id="enroll-heading"
+                data-en="Enroll in Advanced Physics" data-ar="سجّل في الفيزياء المتقدمة">Enroll in Advanced Physics</h2>
+            <p class="enrollment-desc"
+               data-en="Get instant access to all 30 lessons, the full past-paper library, and the timed mock exam — and walk into exam day having already seen it all."
+               data-ar="احصل على وصول فوري لكل الدروس الـ30، ومكتبة الأوراق السابقة الكاملة، والامتحان التجريبي المحسوب بالوقت — وادخل يوم الامتحان وكأنك رأيت كل شيء من قبل.">
+              Get instant access to all 30 lessons, the full past-paper library, and the timed mock exam &mdash; and walk into exam day having already seen it all.
+            </p>
+            <ul class="enrollment-points" role="list">
+              <li data-en="Cancel anytime, no long-term contract" data-ar="إلغاء في أي وقت، بدون عقد طويل الأجل">Cancel anytime, no long-term contract</li>
+              <li data-en="Mobile, tablet, and desktop access" data-ar="وصول من الهاتف والتابلت والكمبيوتر">Mobile, tablet, and desktop access</li>
+              <li data-en="New past papers added every term" data-ar="أوراق سابقة جديدة تُضاف كل فصل دراسي">New past papers added every term</li>
+            </ul>
+          </div>
+          <div class="enrollment-card-price">
+            <div class="course-enroll-price">
+              <strong>480</strong>
+              <span data-en="EGP / month" data-ar="ج.م / شهر">EGP / month</span>
+            </div>
+            <a href="register.html?course=advanced-physics" class="btn btn-primary btn-lg btn-full">
+              <span data-en="Enroll Now" data-ar="سجّل الآن">Enroll Now</span>
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="third-year.html#pricing" class="btn btn-ghost btn-full">
+              <span data-en="See the Full Bundle" data-ar="عرض الحزمة الكاملة">See the Full Bundle</span>
+            </a>
+            <p class="enrollment-guarantee" data-en="7-day money-back guarantee" data-ar="ضمان استرداد الأموال لمدة 7 أيام">7-day money-back guarantee</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /ENROLLMENT SECTION -->
+
+
+    <!-- ═══════════════════════════════════════════
+         RELATED COURSES
+    ═══════════════════════════════════════════ -->
+    <section class="section related-courses-section" id="related" aria-labelledby="related-heading">
+      <div class="container">
+
+        <div class="section-header" data-animate="fade-up">
+          <p class="section-eyebrow" data-en="Keep Going" data-ar="استمر">Keep Going</p>
+          <h2 class="section-heading" id="related-heading"
+              data-en="More Third Year Courses" data-ar="دورات أخرى للصف الثالث">More Third Year Courses</h2>
+        </div>
+
+        <div class="related-courses-grid">
+
+          <a href="course-1.html" class="related-course-card" data-animate="fade-up" data-delay="0">
+            <span class="course-card-badge" data-en="Mathematics" data-ar="رياضيات">Mathematics</span>
+            <h3 data-en="Calculus" data-ar="حساب التفاضل والتكامل">Calculus</h3>
+            <p data-en="Differentiation, integration, and applied optimization." data-ar="التفاضل والتكامل والتحسين التطبيقي.">Differentiation, integration, and applied optimization.</p>
+          </a>
+
+          <a href="course-2.html" class="related-course-card" data-animate="fade-up" data-delay="80">
+            <span class="course-card-badge" data-en="Mathematics" data-ar="رياضيات">Mathematics</span>
+            <h3 data-en="Statistics" data-ar="الإحصاء">Statistics</h3>
+            <p data-en="Probability, distributions, and data analysis." data-ar="الاحتمالات والتوزيعات وتحليل البيانات.">Probability, distributions, and data analysis.</p>
+          </a>
+
+          <a href="course-4.html" class="related-course-card" data-animate="fade-up" data-delay="160">
+            <span class="course-card-badge" data-en="Science" data-ar="علوم">Science</span>
+            <h3 data-en="Chemistry Exam Prep" data-ar="الكيمياء - إعداد الامتحان">Chemistry Exam Prep</h3>
+            <p data-en="Organic and physical chemistry exam revision." data-ar="مراجعة امتحان الكيمياء العضوية والفيزيائية.">Organic and physical chemistry exam revision.</p>
+          </a>
+
+        </div>
+      </div>
+    </section>
+    <!-- /RELATED COURSES -->
+
+  </main>
+  <!-- /MAIN -->
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-brand" aria-label="Go to homepage">
+          <div class="brand-icon" aria-hidden="true">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="10" fill="currentColor" opacity="0.12"/>
+              <path d="M18 8 L18 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M7 12 Q12.5 9 18 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M7 18 Q12.5 15 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M7 24 Q12.5 21 18 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M29 12 Q23.5 9 18 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M29 18 Q23.5 15 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M29 24 Q23.5 21 18 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name" data-en="Mr. Ahmed Hassan" data-ar="أ. أحمد حسن">Mr. Ahmed Hassan</span>
+            <span class="brand-subtitle" data-en="Educational Platform" data-ar="المنصة التعليمية">Educational Platform</span>
+          </div>
+        </a>
+        <p class="footer-tagline"
+           data-en="Empowering students with knowledge, one lesson at a time."
+           data-ar="تمكين الطلاب بالمعرفة، درساً في كل مرة.">
+          Empowering students with knowledge, one lesson at a time.
+        </p>
+      </div>
+
+      <div class="footer-links-group">
+        <h3 class="footer-links-title" data-en="Courses" data-ar="الدورات">Courses</h3>
+        <ul role="list">
+          <li><a href="first-year.html" data-en="First Year" data-ar="الصف الأول">First Year</a></li>
+          <li><a href="second-year.html" data-en="Second Year" data-ar="الصف الثاني">Second Year</a></li>
+          <li><a href="third-year.html" data-en="Third Year" data-ar="الصف الثالث">Third Year</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-group">
+        <h3 class="footer-links-title" data-en="Platform" data-ar="المنصة">Platform</h3>
+        <ul role="list">
+          <li><a href="../index.html#about" data-en="About the Teacher" data-ar="عن المعلم">About the Teacher</a></li>
+          <li><a href="#reviews" data-en="Student Reviews" data-ar="تقييمات الطلاب">Student Reviews</a></li>
+          <li><a href="../index.html#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+          <li><a href="login.html" data-en="Login" data-ar="تسجيل الدخول">Login</a></li>
+          <li><a href="register.html" data-en="Register" data-ar="التسجيل">Register</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-group">
+        <h3 class="footer-links-title" data-en="Contact" data-ar="التواصل">Contact</h3>
+        <ul role="list">
+          <li><a href="mailto:ahmed.hassan@edu.example.com">ahmed.hassan@edu.example.com</a></li>
+          <li><a href="tel:+201234567890">+20 123 456 7890</a></li>
+          <li><span data-en="Cairo, Egypt" data-ar="القاهرة، مصر">Cairo, Egypt</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="footer-copy">
+          <span data-en="© 2025 Mr. Ahmed Hassan. All rights reserved." data-ar="© 2025 أ. أحمد حسن. جميع الحقوق محفوظة.">
+            © 2025 Mr. Ahmed Hassan. All rights reserved.
+          </span>
+        </p>
+        <div class="footer-bottom-controls">
+          <button class="ctrl-btn lang-toggle" id="footer-lang-toggle" aria-label="Switch language">
+            <span id="footer-lang-label">عربي</span>
+          </button>
+          <button class="ctrl-btn theme-toggle" id="footer-theme-toggle" aria-label="Toggle dark mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <!-- /FOOTER -->
+
+
+  <!-- ═══════════════════════════════════════════
+       SCROLL TO TOP BUTTON
+  ═══════════════════════════════════════════ -->
+  <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top" hidden>
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M18 15l-6-6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+
+  <!-- ═══════════════════════════════════════════
+       JAVASCRIPT
+  ═══════════════════════════════════════════ -->
+  <script src="../js/darkmode.js" defer></script>
+  <script src="../js/language.js" defer></script>
+  <script src="../js/main.js" defer></script>
+
+</body>
+</html>

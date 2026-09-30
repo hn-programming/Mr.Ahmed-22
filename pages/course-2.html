@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Statistics for Third Year — probability, distributions, hypothesis testing, and regression with full video lessons, curriculum, and exam-focused practice." />
+  <meta name="author" content="Mr. Ahmed Hassan" />
+  <title>Statistics | Third Year Course | Mr. Ahmed Hassan</title>
+
+  <!-- ═══════════════════════════════════════════
+       FONTS
+  ═══════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+
+  <!-- Favicon placeholder (inline SVG as data URI) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       LOADING SCREEN
+  ═══════════════════════════════════════════ -->
+  <div id="loading-screen" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="4" y="14" width="52" height="36" rx="4" fill="currentColor" opacity="0.15"/>
+          <path d="M30 18 L30 46" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M8 20 Q19 16 30 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M8 28 Q19 24 30 28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M8 36 Q19 32 30 36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M52 20 Q41 16 30 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M52 28 Q41 24 30 28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M52 36 Q41 32 30 36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="loader-bar-track">
+        <div class="loader-bar-fill" id="loader-bar"></div>
+      </div>
+      <p class="loader-text" id="loader-text" data-en="Loading course…" data-ar="جارٍ تحميل الدورة…">Loading course…</p>
+    </div>
+  </div>
+  <!-- /LOADING SCREEN -->
+
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <header class="site-header" id="site-header" role="banner">
+    <nav class="nav-container" aria-label="Main navigation">
+
+      <!-- Brand -->
+      <a href="../index.html" class="nav-brand" aria-label="Go to homepage">
+        <div class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="10" fill="currentColor" opacity="0.12"/>
+            <path d="M18 8 L18 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M7 12 Q12.5 9 18 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M7 18 Q12.5 15 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M7 24 Q12.5 21 18 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M29 12 Q23.5 9 18 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M29 18 Q23.5 15 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M29 24 Q23.5 21 18 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name" data-en="Mr. Ahmed Hassan" data-ar="أ. أحمد حسن">Mr. Ahmed Hassan</span>
+          <span class="brand-subtitle" data-en="Educational Platform" data-ar="المنصة التعليمية">Educational Platform</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="nav-links" role="list">
+        <li><a href="../index.html" class="nav-link" data-en="Home" data-ar="الرئيسية">Home</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false"
+                  data-en="Years" data-ar="السنوات">
+            Years
+            <svg class="chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="dropdown-menu" role="list">
+            <li>
+              <a href="first-year.html" class="dropdown-link">
+                <span class="dropdown-icon" aria-hidden="true">①</span>
+                <span data-en="First Year" data-ar="الصف الأول">First Year</span>
+              </a>
+            </li>
+            <li>
+              <a href="second-year.html" class="dropdown-link">
+                <span class="dropdown-icon" aria-hidden="true">②</span>
+                <span data-en="Second Year" data-ar="الصف الثاني">Second Year</span>
+              </a>
+            </li>
+            <li>
+              <a href="third-year.html" class="dropdown-link active" aria-current="page">
+                <span class="dropdown-icon" aria-hidden="true">③</span>
+                <span data-en="Third Year" data-ar="الصف الثالث">Third Year</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../index.html#about" class="nav-link" data-en="About" data-ar="عن المعلم">About</a></li>
+        <li><a href="#reviews" class="nav-link" data-en="Reviews" data-ar="التقييمات">Reviews</a></li>
+        <li><a href="../index.html#contact" class="nav-link" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+      </ul>
+
+      <!-- Nav Controls -->
+      <div class="nav-controls">
+
+        <!-- Language Toggle -->
+        <button class="ctrl-btn lang-toggle" id="lang-toggle" aria-label="Switch to Arabic language">
+          <span class="lang-label" id="lang-label">عربي</span>
+        </button>
+
+        <!-- Dark Mode Toggle -->
+        <button class="ctrl-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <!-- Login -->
+        <a href="login.html" class="btn btn-outline btn-sm" data-en="Login" data-ar="تسجيل الدخول">Login</a>
+
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+      <ul class="mobile-nav-links" role="list">
+        <li><a href="../index.html" class="mobile-nav-link" data-en="Home" data-ar="الرئيسية">Home</a></li>
+        <li>
+          <button class="mobile-nav-link mobile-accordion-trigger" aria-expanded="true"
+                  data-en="Years" data-ar="السنوات">
+            Years
+            <svg class="chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-sub-menu" role="list">
+            <li><a href="first-year.html" class="mobile-sub-link" data-en="First Year" data-ar="الصف الأول">First Year</a></li>
+            <li><a href="second-year.html" class="mobile-sub-link" data-en="Second Year" data-ar="الصف الثاني">Second Year</a></li>
+            <li><a href="third-year.html" class="mobile-sub-link active" aria-current="page" data-en="Third Year" data-ar="الصف الثالث">Third Year</a></li>
+          </ul>
+        </li>
+        <li><a href="../index.html#about" class="mobile-nav-link" data-en="About" data-ar="عن المعلم">About</a></li>
+        <li><a href="#reviews" class="mobile-nav-link" data-en="Reviews" data-ar="التقييمات">Reviews</a></li>
+        <li><a href="../index.html#contact" class="mobile-nav-link" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+        <li class="mobile-nav-cta">
+          <a href="login.html" class="btn btn-primary btn-full" data-en="Login" data-ar="تسجيل الدخول">Login</a>
+        </li>
+        <li class="mobile-nav-cta">
+          <a href="register.html" class="btn btn-outline btn-full" data-en="Register Now" data-ar="سجّل الآن">Register Now</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /Mobile Menu -->
+
+  </header>
+  <!-- /NAVIGATION -->
+
+
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════════
+         BREADCRUMB
+    ═══════════════════════════════════════════ -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="container breadcrumb-inner">
+        <ol class="breadcrumb-list">
+          <li><a href="../index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+          <li class="breadcrumb-sep" aria-hidden="true">/</li>
+          <li><a href="third-year.html" data-en="Third Year" data-ar="الصف الثالث">Third Year</a></li>
+          <li class="breadcrumb-sep" aria-hidden="true">/</li>
+          <li aria-current="page" data-en="Statistics" data-ar="الإحصاء">Statistics</li>
+        </ol>
+      </div>
+    </nav>
+    <!-- /BREADCRUMB -->
+
+
+    <!-- ═══════════════════════════════════════════
+         COURSE HERO
+    ═══════════════════════════════════════════ -->
+    <section class="course-hero" id="course-hero" aria-labelledby="course-hero-heading">
+      <div class="hero-grid-bg" aria-hidden="true">
+        <div class="grid-line grid-line--h" style="top:25%"></div>
+        <div class="grid-line grid-line--h" style="top:70%"></div>
+        <div class="grid-line grid-line--v" style="left:20%"></div>
+        <div class="grid-line grid-line--v" style="left:80%"></div>
+        <div class="grid-orb grid-orb--1" aria-hidden="true"></div>
+      </div>
+
+      <div class="container course-hero-inner">
+
+        <!-- Info Column -->
+        <div class="course-hero-content" data-animate="fade-up">
+          <span class="course-hero-badge" data-en="Third Year · Mathematics" data-ar="الصف الثالث · رياضيات">Third Year · Mathematics</span>
+
+          <h1 class="course-hero-title" id="course-hero-heading"
+              data-en="Statistics" data-ar="الإحصاء">Statistics</h1>
+
+          <p class="course-hero-tagline"
+             data-en="Probability, distributions, and data analysis with the worked examples that exams actually ask for."
+             data-ar="الاحتمالات، والتوزيعات، وتحليل البيانات مع أمثلة محلولة تطابق أسئلة الامتحان.">
+            Probability, distributions, and data analysis with the worked examples that exams actually ask for.
+          </p>
+
+          <div class="course-hero-meta">
+            <div class="meta-pill">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2l2.5 5.5 6 .5-4.5 4 1.5 6-5.5-3.5L4.5 18l1.5-6L1.5 8l6-.5z" fill="currentColor"/></svg>
+              <strong>4.8</strong>
+              <span data-en="(178 ratings)" data-ar="(178 تقييم)">(178 ratings)</span>
+            </div>
+            <div class="meta-pill">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="14" cy="8" r="2.4" stroke="currentColor" stroke-width="1.6"/><path d="M2 17c0-3 2.5-5 5-5s5 2 5 5M12 17c0-2.3 1.6-4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <span><strong>610</strong> <span data-en="students enrolled" data-ar="طالب مسجّل">students enrolled</span></span>
+            </div>
+            <div class="meta-pill">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.6"/><path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <span data-en="Last updated May 2026" data-ar="آخر تحديث مايو 2026">Last updated May 2026</span>
+            </div>
+            <div class="meta-pill">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <span data-en="English & Arabic" data-ar="إنجليزي وعربي">English &amp; Arabic</span>
+            </div>
+          </div>
+
+          <div class="course-hero-instructor">
+            <div class="hcard-avatar hcard-avatar--sm" aria-hidden="true">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="40" fill="currentColor" opacity="0.08"/>
+                <circle cx="40" cy="30" r="14" fill="currentColor" opacity="0.5"/>
+                <ellipse cx="40" cy="64" rx="22" ry="14" fill="currentColor" opacity="0.4"/>
+              </svg>
+            </div>
+            <p>
+              <span data-en="Taught by" data-ar="يقدّمها">Taught by</span>
+              <a href="../index.html#about" data-en="Mr. Ahmed Hassan" data-ar="أ. أحمد حسن">Mr. Ahmed Hassan</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Video / Enroll Card Column -->
+        <div class="course-hero-card" data-animate="fade-left">
+          <div class="course-preview-player">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=640&h=360&fit=crop" alt="" loading="lazy" />
+            <button class="course-preview-play" aria-label="Play course preview video">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+            </button>
+            <span class="course-preview-duration">1:58</span>
+          </div>
+          <div class="course-enroll-box">
+            <div class="course-enroll-price">
+              <strong>400</strong>
+              <span data-en="EGP / month" data-ar="ج.م / شهر">EGP / month</span>
+            </div>
+            <a href="register.html?course=statistics" class="btn btn-primary btn-full" id="enroll-cta">
+              <span data-en="Enroll Now" data-ar="سجّل الآن">Enroll Now</span>
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="#curriculum" class="btn btn-ghost btn-full">
+              <span data-en="View Curriculum" data-ar="عرض المنهج">View Curriculum</span>
+            </a>
+            <ul class="course-enroll-includes" role="list">
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="5" width="14" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 8h14" stroke="currentColor" stroke-width="1.6"/></svg>
+                <span data-en="24 video lessons (27 hours)" data-ar="24 درساً بالفيديو (27 ساعة)">24 video lessons (27 hours)</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span data-en="35+ past paper questions" data-ar="أكثر من 35 سؤال من أوراق سابقة">35+ past paper questions</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.6"/><path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                <span data-en="Lifetime access" data-ar="وصول مدى الحياة">Lifetime access</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2l6 3v5c0 4-3 7-6 8-3-1-6-4-6-8V5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                <span data-en="Certificate of completion" data-ar="شهادة إتمام">Certificate of completion</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- /COURSE HERO -->
+
+
+    <!-- ═══════════════════════════════════════════
+         COURSE DETAILS
+    ═══════════════════════════════════════════ -->
+    <section class="section course-details-section" id="overview" aria-labelledby="overview-heading">
+      <div class="container course-details-inner">
+
+        <!-- Main column -->
+        <div class="course-details-main">
+
+          <div data-animate="fade-up">
+            <h2 class="section-heading" id="overview-heading"
+                data-en="What You'll Learn" data-ar="ماذا ستتعلم">What You&rsquo;ll Learn</h2>
+            <ul class="learn-grid" role="list">
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span data-en="Calculate probability for independent and dependent events" data-ar="حساب الاحتمالات للحوادث المستقلة والتابعة">Calculate probability for independent and dependent events</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span data-en="Work confidently with the normal and binomial distributions" data-ar="التعامل بثقة مع التوزيع الطبيعي والتوزيع الثنائي">Work confidently with the normal and binomial distributions</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span data-en="Run and interpret hypothesis tests" data-ar="إجراء اختبارات الفروض وتفسيرها">Run and interpret hypothesis tests</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span data-en="Fit and interpret a simple linear regression" data-ar="ملاءمة الانحدار الخطي البسيط وتفسيره">Fit and interpret a simple linear regression</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span data-en="Read and summarize real data sets correctly" data-ar="قراءة مجموعات البيانات الحقيقية وتلخيصها بشكل صحيح">Read and summarize real data sets correctly</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span data-en="Answer full past-paper Statistics questions with confidence" data-ar="الإجابة على أسئلة الإحصاء الكاملة من الأوراق السابقة بثقة">Answer full past-paper Statistics questions with confidence</span>
+              </li>
+            </ul>
+          </div>
+
+          <div data-animate="fade-up">
+            <h2 class="section-heading" data-en="Course Description" data-ar="وصف الدورة">Course Description</h2>
+            <p class="course-description"
+               data-en="This course turns Statistics from a memorization exercise into a set of tools you actually understand. We start with probability fundamentals, move through the distributions that appear most often on the final exam, and finish with hypothesis testing and regression — always tied back to real past-paper questions and their mark schemes."
+               data-ar="تحوّل هذه الدورة الإحصاء من تمرين حفظ إلى مجموعة أدوات تفهمها فعلاً. نبدأ بأساسيات الاحتمالات، وننتقل عبر التوزيعات الأكثر ظهوراً في الامتحان النهائي، وننتهي باختبار الفروض والانحدار — مع ربط كل ذلك دائماً بأسئلة حقيقية من الأوراق السابقة ومخططات تصحيحها.">
+              This course turns Statistics from a memorization exercise into a set of tools you actually understand. We start with probability fundamentals, move through the distributions that appear most often on the final exam, and finish with hypothesis testing and regression &mdash; always tied back to real past-paper questions and their mark schemes.
+            </p>
+          </div>
+
+          <div data-animate="fade-up">
+            <h2 class="section-heading" data-en="Requirements" data-ar="المتطلبات">Requirements</h2>
+            <ul class="requirements-list" role="list">
+              <li data-en="Second Year Algebra basics" data-ar="أساسيات الجبر من الصف الثاني">Second Year Algebra basics</li>
+              <li data-en="A scientific calculator" data-ar="حاسبة علمية">A scientific calculator</li>
+              <li data-en="Comfort reading simple tables and graphs" data-ar="الراحة في قراءة الجداول والرسوم البيانية البسيطة">Comfort reading simple tables and graphs</li>
+            </ul>
+          </div>
+
+          <!-- ═══════════════════════════════════════
+               CURRICULUM
+          ═══════════════════════════════════════ -->
+          <div id="curriculum" data-animate="fade-up">
+            <h2 class="section-heading" data-en="Curriculum" data-ar="المنهج">Curriculum</h2>
+            <p class="curriculum-summary">
+              <span><strong>4</strong> <span data-en="modules" data-ar="وحدات">modules</span></span> ·
+              <span><strong>24</strong> <span data-en="lessons" data-ar="درساً">lessons</span></span> ·
+              <span><strong>27</strong> <span data-en="hours total" data-ar="ساعة إجمالاً">hours total</span></span>
+            </p>
+
+            <div class="module-accordion">
+
+              <!-- Module 1 -->
+              <div class="module-item">
+                <button class="module-header" aria-expanded="true">
+                  <span class="module-header-left">
+                    <span class="module-number">01</span>
+                    <span class="module-title" data-en="Foundations of Probability" data-ar="أساسيات الاحتمالات">Foundations of Probability</span>
+                  </span>
+                  <span class="module-header-right">
+                    <span class="module-meta" data-en="6 lessons · 6h 30m" data-ar="6 دروس · 6س 30د">6 lessons · 6h 30m</span>
+                    <svg class="chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <ul class="lesson-list" role="list">
+                  <li class="lesson-item lesson-item--preview">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="What Is Probability?" data-ar="ما هو الاحتمال؟">What Is Probability?</span>
+                    <span class="lesson-tag" data-en="Preview" data-ar="معاينة">Preview</span>
+                    <span class="lesson-duration">11:20</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Independent & Dependent Events" data-ar="الحوادث المستقلة والتابعة">Independent &amp; Dependent Events</span>
+                    <span class="lesson-duration">14:35</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Conditional Probability" data-ar="الاحتمال الشرطي">Conditional Probability</span>
+                    <span class="lesson-duration">16:10</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Counting Rules & Combinations" data-ar="قواعد العد والتوافيق">Counting Rules &amp; Combinations</span>
+                    <span class="lesson-duration">15:00</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Expected Value" data-ar="القيمة المتوقعة">Expected Value</span>
+                    <span class="lesson-duration">13:45</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span class="lesson-title" data-en="Practice Set: Probability" data-ar="مجموعة تمارين: الاحتمالات">Practice Set: Probability</span>
+                    <span class="lesson-duration">20 Q</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Module 2 -->
+              <div class="module-item">
+                <button class="module-header" aria-expanded="false">
+                  <span class="module-header-left">
+                    <span class="module-number">02</span>
+                    <span class="module-title" data-en="Distributions" data-ar="التوزيعات">Distributions</span>
+                  </span>
+                  <span class="module-header-right">
+                    <span class="module-meta" data-en="6 lessons · 7h 10m" data-ar="6 دروس · 7س 10د">6 lessons · 7h 10m</span>
+                    <svg class="chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <ul class="lesson-list" role="list" hidden>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Discrete vs. Continuous Variables" data-ar="المتغيرات المتقطعة والمستمرة">Discrete vs. Continuous Variables</span>
+                    <span class="lesson-duration">13:00</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="The Binomial Distribution" data-ar="التوزيع الثنائي">The Binomial Distribution</span>
+                    <span class="lesson-duration">17:25</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="The Normal Distribution" data-ar="التوزيع الطبيعي">The Normal Distribution</span>
+                    <span class="lesson-duration">19:40</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Z-Scores & Standardization" data-ar="القيم المعيارية Z والتقييس">Z-Scores &amp; Standardization</span>
+                    <span class="lesson-duration">16:15</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="The Central Limit Theorem" data-ar="نظرية النهاية المركزية">The Central Limit Theorem</span>
+                    <span class="lesson-duration">18:05</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span class="lesson-title" data-en="Practice Set: Distributions" data-ar="مجموعة تمارين: التوزيعات">Practice Set: Distributions</span>
+                    <span class="lesson-duration">22 Q</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Module 3 -->
+              <div class="module-item">
+                <button class="module-header" aria-expanded="false">
+                  <span class="module-header-left">
+                    <span class="module-number">03</span>
+                    <span class="module-title" data-en="Hypothesis Testing" data-ar="اختبار الفروض">Hypothesis Testing</span>
+                  </span>
+                  <span class="module-header-right">
+                    <span class="module-meta" data-en="6 lessons · 7h 00m" data-ar="6 دروس · 7س 00د">6 lessons · 7h 00m</span>
+                    <svg class="chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <ul class="lesson-list" role="list" hidden>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Null & Alternative Hypotheses" data-ar="الفرض العدمي والفرض البديل">Null &amp; Alternative Hypotheses</span>
+                    <span class="lesson-duration">15:40</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Significance Levels & P-Values" data-ar="مستويات الدلالة وقيم P">Significance Levels &amp; P-Values</span>
+                    <span class="lesson-duration">18:20</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="One-Sample Z and T Tests" data-ar="اختبار Z واختبار T لعينة واحدة">One-Sample Z and T Tests</span>
+                    <span class="lesson-duration">19:10</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Type I & Type II Errors" data-ar="الخطأ من النوع الأول والثاني">Type I &amp; Type II Errors</span>
+                    <span class="lesson-duration">14:50</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Confidence Intervals" data-ar="فترات الثقة">Confidence Intervals</span>
+                    <span class="lesson-duration">17:00</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span class="lesson-title" data-en="Practice Set: Hypothesis Testing" data-ar="مجموعة تمارين: اختبار الفروض">Practice Set: Hypothesis Testing</span>
+                    <span class="lesson-duration">18 Q</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Module 4 -->
+              <div class="module-item">
+                <button class="module-header" aria-expanded="false">
+                  <span class="module-header-left">
+                    <span class="module-number">04</span>
+                    <span class="module-title" data-en="Regression & Exam Practice" data-ar="الانحدار والتدريب على الامتحان">Regression &amp; Exam Practice</span>
+                  </span>
+                  <span class="module-header-right">
+                    <span class="module-meta" data-en="6 lessons · 6h 20m" data-ar="6 دروس · 6س 20د">6 lessons · 6h 20m</span>
+                    <svg class="chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <ul class="lesson-list" role="list" hidden>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Scatter Plots & Correlation" data-ar="المخططات المبعثرة والارتباط">Scatter Plots &amp; Correlation</span>
+                    <span class="lesson-duration">14:10</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Simple Linear Regression" data-ar="الانحدار الخطي البسيط">Simple Linear Regression</span>
+                    <span class="lesson-duration">18:30</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Interpreting the Regression Line" data-ar="تفسير خط الانحدار">Interpreting the Regression Line</span>
+                    <span class="lesson-duration">15:45</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="2024 Past Paper: Full Walkthrough" data-ar="ورقة امتحان 2024: حل كامل">2024 Past Paper: Full Walkthrough</span>
+                    <span class="lesson-duration">38:00</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>
+                    <span class="lesson-title" data-en="Common Mistakes & How to Avoid Them" data-ar="الأخطاء الشائعة وكيفية تجنبها">Common Mistakes &amp; How to Avoid Them</span>
+                    <span class="lesson-duration">20:15</span>
+                  </li>
+                  <li class="lesson-item">
+                    <svg class="lesson-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span class="lesson-title" data-en="Timed Mock: Statistics Paper" data-ar="امتحان تجريبي محسوب بالوقت: ورقة الإحصاء">Timed Mock: Statistics Paper</span>
+                    <span class="lesson-duration">50:00</span>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sticky side column -->
+        <aside class="course-details-side">
+          <div class="instructor-mini-card" data-animate="fade-left">
+            <div class="hcard-avatar" aria-hidden="true">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="40" fill="currentColor" opacity="0.08"/>
+                <circle cx="40" cy="30" r="14" fill="currentColor" opacity="0.5"/>
+                <ellipse cx="40" cy="64" rx="22" ry="14" fill="currentColor" opacity="0.4"/>
+              </svg>
+            </div>
+            <p class="hcard-name" data-en="Mr. Ahmed Hassan" data-ar="أ. أحمد حسن">Mr. Ahmed Hassan</p>
+            <p class="hcard-role" data-en="Math & Science Teacher" data-ar="معلم رياضيات وعلوم">Math &amp; Science Teacher</p>
+            <p class="instructor-mini-bio"
+               data-en="10+ years teaching Math and Science, with a focus on turning exam fear into exam confidence."
+               data-ar="أكثر من 10 سنوات في تدريس الرياضيات والعلوم، مع تركيز على تحويل الخوف من الامتحان إلى ثقة فيه.">
+              10+ years teaching Math and Science, with a focus on turning exam fear into exam confidence.
+            </p>
+            <a href="../index.html#about" class="btn btn-outline btn-full btn-sm">
+              <span data-en="View Full Profile" data-ar="عرض الملف الكامل">View Full Profile</span>
+            </a>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+    <!-- /COURSE DETAILS -->
+
+
+    <!-- ═══════════════════════════════════════════
+         VIDEO PREVIEWS
+    ═══════════════════════════════════════════ -->
+    <section class="section video-previews-section" id="videos" aria-labelledby="videos-heading">
+      <div class="container">
+
+        <div class="section-header" data-animate="fade-up">
+          <p class="section-eyebrow" data-en="Watch Before You Enroll" data-ar="شاهد قبل التسجيل">Watch Before You Enroll</p>
+          <h2 class="section-heading" id="videos-heading"
+              data-en="Free Sample Lessons" data-ar="دروس مجانية للمعاينة">Free Sample Lessons</h2>
+        </div>
+
+        <div class="video-preview-grid">
+
+          <article class="video-preview-card" data-animate="fade-up" data-delay="0">
+            <button class="video-preview-thumb" aria-label="Play: What Is Probability?">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=480&h=270&fit=crop" alt="" loading="lazy" />
+              <span class="video-preview-play" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              </span>
+              <span class="video-preview-duration">11:20</span>
+            </button>
+            <h3 class="video-preview-title" data-en="What Is Probability?" data-ar="ما هو الاحتمال؟">What Is Probability?</h3>
+            <p class="video-preview-module" data-en="Module 1 · Foundations" data-ar="الوحدة 1 · الأساسيات">Module 1 · Foundations</p>
+          </article>
+
+          <article class="video-preview-card" data-animate="fade-up" data-delay="80">
+            <button class="video-preview-thumb" aria-label="Play: The Normal Distribution">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=480&h=270&fit=crop" alt="" loading="lazy" />
+              <span class="video-preview-play" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              </span>
+              <span class="video-preview-duration">19:40</span>
+            </button>
+            <h3 class="video-preview-title" data-en="The Normal Distribution" data-ar="التوزيع الطبيعي">The Normal Distribution</h3>
+            <p class="video-preview-module" data-en="Module 2 · Distributions" data-ar="الوحدة 2 · التوزيعات">Module 2 · Distributions</p>
+          </article>
+
+          <article class="video-preview-card" data-animate="fade-up" data-delay="160">
+            <button class="video-preview-thumb" aria-label="Play: 2024 Past Paper Walkthrough">
+              <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=480&h=270&fit=crop" alt="" loading="lazy" />
+              <span class="video-preview-play" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              </span>
+              <span class="video-preview-duration">38:00</span>
+            </button>
+            <h3 class="video-preview-title" data-en="2024 Past Paper: Full Walkthrough" data-ar="ورقة امتحان 2024: حل كامل">2024 Past Paper: Full Walkthrough</h3>
+            <p class="video-preview-module" data-en="Module 4 · Exam Practice" data-ar="الوحدة 4 · التدريب على الامتحان">Module 4 · Exam Practice</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+    <!-- /VIDEO PREVIEWS -->
+
+
+    <!-- ═══════════════════════════════════════════
+         REVIEWS
+    ═══════════════════════════════════════════ -->
+    <section class="section reviews-section" id="reviews" aria-labelledby="reviews-heading">
+      <div class="container">
+
+        <div class="section-header" data-animate="fade-up">
+          <p class="section-eyebrow" data-en="Student Feedback" data-ar="آراء الطلاب">Student Feedback</p>
+          <h2 class="section-heading" id="reviews-heading"
+              data-en="What Students Say About This Course" data-ar="ماذا يقول الطلاب عن هذه الدورة">What Students Say About This Course</h2>
+        </div>
+
+        <div class="reviews-grid">
+
+          <article class="testimonial-card" data-animate="fade-up" data-delay="0">
+            <div class="testimonial-quote-mark" aria-hidden="true">&ldquo;</div>
+            <p class="testimonial-text"
+               data-en="Hypothesis testing finally makes sense. The P-value lesson alone was worth the whole course."
+               data-ar="اختبار الفروض أصبح منطقياً أخيراً. درس قيمة P وحده كان يستحق الدورة كاملة.">
+              Hypothesis testing finally makes sense. The P-value lesson alone was worth the whole course.
+            </p>
+            <footer class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">S</div>
+              <div>
+                <p class="author-name" data-en="Salma R." data-ar="سلمى ر.">Salma R.</p>
+                <p class="author-year" data-en="Third Year Student" data-ar="طالب صف ثالث">Third Year Student</p>
+              </div>
+            </footer>
+          </article>
+
+          <article class="testimonial-card" data-animate="fade-up" data-delay="80">
+            <div class="testimonial-quote-mark" aria-hidden="true">&ldquo;</div>
+            <p class="testimonial-text"
+               data-en="The normal distribution lesson with the z-score table walkthrough cleared up months of confusion in 20 minutes."
+               data-ar="درس التوزيع الطبيعي مع شرح جدول القيم المعيارية Z أوضح أشهراً من الالتباس في 20 دقيقة.">
+              The normal distribution lesson with the z-score table walkthrough cleared up months of confusion in 20 minutes.
+            </p>
+            <footer class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">K</div>
+              <div>
+                <p class="author-name" data-en="Karim D." data-ar="كريم د.">Karim D.</p>
+                <p class="author-year" data-en="Third Year Student" data-ar="طالب صف ثالث">Third Year Student</p>
+              </div>
+            </footer>
+          </article>
+
+          <article class="testimonial-card" data-animate="fade-up" data-delay="160">
+            <div class="testimonial-quote-mark" aria-hidden="true">&ldquo;</div>
+            <p class="testimonial-text"
+               data-en="I used to skip regression questions entirely. Now they're free marks on every past paper I try."
+               data-ar="كنت أتخطى أسئلة الانحدار بالكامل. الآن أصبحت درجات مضمونة في كل ورقة سابقة أحاولها.">
+              I used to skip regression questions entirely. Now they&rsquo;re free marks on every past paper I try.
+            </p>
+            <footer class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">R</div>
+              <div>
+                <p class="author-name" data-en="Rana E." data-ar="رنا إ.">Rana E.</p>
+                <p class="author-year" data-en="Third Year Student" data-ar="طالب صف ثالث">Third Year Student</p>
+              </div>
+            </footer>
+          </article>
+
+        </div>
+      </div>
+    </section>
+    <!-- /REVIEWS -->
+
+
+    <!-- ═══════════════════════════════════════════
+         ENROLLMENT SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="section enrollment-section" id="enroll" aria-labelledby="enroll-heading">
+      <div class="container enrollment-inner" data-animate="fade-up">
+        <div class="enrollment-card">
+          <div class="enrollment-card-main">
+            <p class="section-eyebrow" data-en="Ready When You Are" data-ar="جاهز عندما تكون مستعداً">Ready When You Are</p>
+            <h2 class="section-heading" id="enroll-heading"
+                data-en="Enroll in Statistics" data-ar="سجّل في الإحصاء">Enroll in Statistics</h2>
+            <p class="enrollment-desc"
+               data-en="Get instant access to all 24 lessons, the full past-paper library, and the timed mock exam — and start turning data problems into easy marks."
+               data-ar="احصل على وصول فوري لكل الدروس الـ24، ومكتبة الأوراق السابقة الكاملة، والامتحان التجريبي المحسوب بالوقت — وابدأ بتحويل مسائل البيانات إلى درجات سهلة.">
+              Get instant access to all 24 lessons, the full past-paper library, and the timed mock exam &mdash; and start turning data problems into easy marks.
+            </p>
+            <ul class="enrollment-points" role="list">
+              <li data-en="Cancel anytime, no long-term contract" data-ar="إلغاء في أي وقت، بدون عقد طويل الأجل">Cancel anytime, no long-term contract</li>
+              <li data-en="Mobile, tablet, and desktop access" data-ar="وصول من الهاتف والتابلت والكمبيوتر">Mobile, tablet, and desktop access</li>
+              <li data-en="New past papers added every term" data-ar="أوراق سابقة جديدة تُضاف كل فصل دراسي">New past papers added every term</li>
+            </ul>
+          </div>
+          <div class="enrollment-card-price">
+            <div class="course-enroll-price">
+              <strong>400</strong>
+              <span data-en="EGP / month" data-ar="ج.م / شهر">EGP / month</span>
+            </div>
+            <a href="register.html?course=statistics" class="btn btn-primary btn-lg btn-full">
+              <span data-en="Enroll Now" data-ar="سجّل الآن">Enroll Now</span>
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="third-year.html#pricing" class="btn btn-ghost btn-full">
+              <span data-en="See the Full Bundle" data-ar="عرض الحزمة الكاملة">See the Full Bundle</span>
+            </a>
+            <p class="enrollment-guarantee" data-en="7-day money-back guarantee" data-ar="ضمان استرداد الأموال لمدة 7 أيام">7-day money-back guarantee</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /ENROLLMENT SECTION -->
+
+
+    <!-- ═══════════════════════════════════════════
+         RELATED COURSES
+    ═══════════════════════════════════════════ -->
+    <section class="section related-courses-section" id="related" aria-labelledby="related-heading">
+      <div class="container">
+
+        <div class="section-header" data-animate="fade-up">
+          <p class="section-eyebrow" data-en="Keep Going" data-ar="استمر">Keep Going</p>
+          <h2 class="section-heading" id="related-heading"
+              data-en="More Third Year Courses" data-ar="دورات أخرى للصف الثالث">More Third Year Courses</h2>
+        </div>
+
+        <div class="related-courses-grid">
+
+          <a href="course-1.html" class="related-course-card" data-animate="fade-up" data-delay="0">
+            <span class="course-card-badge" data-en="Mathematics" data-ar="رياضيات">Mathematics</span>
+            <h3 data-en="Calculus" data-ar="حساب التفاضل والتكامل">Calculus</h3>
+            <p data-en="Differentiation, integration, and applied optimization." data-ar="التفاضل والتكامل والتحسين التطبيقي.">Differentiation, integration, and applied optimization.</p>
+          </a>
+
+          <a href="course-3.html" class="related-course-card" data-animate="fade-up" data-delay="80">
+            <span class="course-card-badge" data-en="Science" data-ar="علوم">Science</span>
+            <h3 data-en="Advanced Physics" data-ar="الفيزياء المتقدمة">Advanced Physics</h3>
+            <p data-en="Electromagnetism, modern physics, and energy systems." data-ar="الكهرومغناطيسية والفيزياء الحديثة وأنظمة الطاقة.">Electromagnetism, modern physics, and energy systems.</p>
+          </a>
+
+          <a href="course-4.html" class="related-course-card" data-animate="fade-up" data-delay="160">
+            <span class="course-card-badge" data-en="Science" data-ar="علوم">Science</span>
+            <h3 data-en="Chemistry Exam Prep" data-ar="الكيمياء - إعداد الامتحان">Chemistry Exam Prep</h3>
+            <p data-en="Organic and physical chemistry exam revision." data-ar="مراجعة امتحان الكيمياء العضوية والفيزيائية.">Organic and physical chemistry exam revision.</p>
+          </a>
+
+        </div>
+      </div>
+    </section>
+    <!-- /RELATED COURSES -->
+
+  </main>
+  <!-- /MAIN -->
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-brand" aria-label="Go to homepage">
+          <div class="brand-icon" aria-hidden="true">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="10" fill="currentColor" opacity="0.12"/>
+              <path d="M18 8 L18 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M7 12 Q12.5 9 18 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M7 18 Q12.5 15 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M7 24 Q12.5 21 18 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M29 12 Q23.5 9 18 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M29 18 Q23.5 15 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M29 24 Q23.5 21 18 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name" data-en="Mr. Ahmed Hassan" data-ar="أ. أحمد حسن">Mr. Ahmed Hassan</span>
+            <span class="brand-subtitle" data-en="Educational Platform" data-ar="المنصة التعليمية">Educational Platform</span>
+          </div>
+        </a>
+        <p class="footer-tagline"
+           data-en="Empowering students with knowledge, one lesson at a time."
+           data-ar="تمكين الطلاب بالمعرفة، درساً في كل مرة.">
+          Empowering students with knowledge, one lesson at a time.
+        </p>
+      </div>
+
+      <div class="footer-links-group">
+        <h3 class="footer-links-title" data-en="Courses" data-ar="الدورات">Courses</h3>
+        <ul role="list">
+          <li><a href="first-year.html" data-en="First Year" data-ar="الصف الأول">First Year</a></li>
+          <li><a href="second-year.html" data-en="Second Year" data-ar="الصف الثاني">Second Year</a></li>
+          <li><a href="third-year.html" data-en="Third Year" data-ar="الصف الثالث">Third Year</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-group">
+        <h3 class="footer-links-title" data-en="Platform" data-ar="المنصة">Platform</h3>
+        <ul role="list">
+          <li><a href="../index.html#about" data-en="About the Teacher" data-ar="عن المعلم">About the Teacher</a></li>
+          <li><a href="#reviews" data-en="Student Reviews" data-ar="تقييمات الطلاب">Student Reviews</a></li>
+          <li><a href="../index.html#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+          <li><a href="login.html" data-en="Login" data-ar="تسجيل الدخول">Login</a></li>
+          <li><a href="register.html" data-en="Register" data-ar="التسجيل">Register</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-group">
+        <h3 class="footer-links-title" data-en="Contact" data-ar="التواصل">Contact</h3>
+        <ul role="list">
+          <li><a href="mailto:ahmed.hassan@edu.example.com">ahmed.hassan@edu.example.com</a></li>
+          <li><a href="tel:+201234567890">+20 123 456 7890</a></li>
+          <li><span data-en="Cairo, Egypt" data-ar="القاهرة، مصر">Cairo, Egypt</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="footer-copy">
+          <span data-en="© 2025 Mr. Ahmed Hassan. All rights reserved." data-ar="© 2025 أ. أحمد حسن. جميع الحقوق محفوظة.">
+            © 2025 Mr. Ahmed Hassan. All rights reserved.
+          </span>
+        </p>
+        <div class="footer-bottom-controls">
+          <button class="ctrl-btn lang-toggle" id="footer-lang-toggle" aria-label="Switch language">
+            <span id="footer-lang-label">عربي</span>
+          </button>
+          <button class="ctrl-btn theme-toggle" id="footer-theme-toggle" aria-label="Toggle dark mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <!-- /FOOTER -->
+
+
+  <!-- ═══════════════════════════════════════════
+       SCROLL TO TOP BUTTON
+  ═══════════════════════════════════════════ -->
+  <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top" hidden>
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M18 15l-6-6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+
+  <!-- ═══════════════════════════════════════════
+       JAVASCRIPT
+  ═══════════════════════════════════════════ -->
+  <script src="../js/darkmode.js" defer></script>
+  <script src="../js/language.js" defer></script>
+  <script src="../js/main.js" defer></script>
+
+</body>
+</html>

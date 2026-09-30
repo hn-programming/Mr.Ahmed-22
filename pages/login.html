@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Login to your account on Mr. Ahmed Hassan's Educational Platform to access your classes, lessons, and exam materials." />
+  <meta name="author" content="Mr. Ahmed Hassan" />
+  <title>Login | Mr. Ahmed Hassan Educational Platform</title>
+
+  <!-- ═══════════════════════════════════════════
+       FONTS
+  ═══════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+
+  <!-- Favicon placeholder (inline SVG as data URI) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       LOADING SCREEN
+  ═══════════════════════════════════════════ -->
+  <div id="loading-screen" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="4" y="14" width="52" height="36" rx="4" fill="currentColor" opacity="0.15"/>
+          <path d="M30 18 L30 46" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M8 20 Q19 16 30 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M8 28 Q19 24 30 28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M8 36 Q19 32 30 36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M52 20 Q41 16 30 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M52 28 Q41 24 30 28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M52 36 Q41 32 30 36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="loader-bar-track">
+        <div class="loader-bar-fill" id="loader-bar"></div>
+      </div>
+      <p class="loader-text" id="loader-text" data-en="Loading your classroom…" data-ar="جارٍ تحميل الفصل الدراسي…">Loading your classroom…</p>
+    </div>
+  </div>
+  <!-- /LOADING SCREEN -->
+
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <header class="site-header" id="site-header" role="banner">
+    <nav class="nav-container" aria-label="Main navigation">
+
+      <!-- Brand -->
+      <a href="../index.html" class="nav-brand" aria-label="Go to homepage">
+        <div class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="10" fill="currentColor" opacity="0.12"/>
+            <path d="M18 8 L18 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M7 12 Q12.5 9 18 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M7 18 Q12.5 15 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M7 24 Q12.5 21 18 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M29 12 Q23.5 9 18 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M29 18 Q23.5 15 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M29 24 Q23.5 21 18 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name" data-en="Mr. Ahmed Hassan" data-ar="أ. أحمد حسن">Mr. Ahmed Hassan</span>
+          <span class="brand-subtitle" data-en="Educational Platform" data-ar="المنصة التعليمية">Educational Platform</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="nav-links" role="list">
+        <li><a href="../index.html" class="nav-link" data-en="Home" data-ar="الرئيسية">Home</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false"
+                  data-en="Years" data-ar="السنوات">
+            Years
+            <svg class="chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="dropdown-menu" role="list">
+            <li>
+              <a href="first-year.html" class="dropdown-link">
+                <span class="dropdown-icon" aria-hidden="true">①</span>
+                <span data-en="First Year" data-ar="الصف الأول">First Year</span>
+              </a>
+            </li>
+            <li>
+              <a href="second-year.html" class="dropdown-link">
+                <span class="dropdown-icon" aria-hidden="true">②</span>
+                <span data-en="Second Year" data-ar="الصف الثاني">Second Year</span>
+              </a>
+            </li>
+            <li>
+              <a href="third-year.html" class="dropdown-link">
+                <span class="dropdown-icon" aria-hidden="true">③</span>
+                <span data-en="Third Year" data-ar="الصف الثالث">Third Year</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../index.html#about" class="nav-link" data-en="About" data-ar="عن المعلم">About</a></li>
+        <li><a href="../index.html#testimonials" class="nav-link" data-en="Reviews" data-ar="التقييمات">Reviews</a></li>
+        <li><a href="../index.html#contact" class="nav-link" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+      </ul>
+
+      <!-- Nav Controls -->
+      <div class="nav-controls">
+
+        <!-- Language Toggle -->
+        <button class="ctrl-btn lang-toggle" id="lang-toggle" aria-label="Switch to Arabic language">
+          <span class="lang-label" id="lang-label">عربي</span>
+        </button>
+
+        <!-- Dark Mode Toggle -->
+        <button class="ctrl-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <!-- Register -->
+        <a href="register.html" class="btn btn-outline btn-sm" data-en="Register" data-ar="التسجيل">Register</a>
+
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+      <ul class="mobile-nav-links" role="list">
+        <li><a href="../index.html" class="mobile-nav-link" data-en="Home" data-ar="الرئيسية">Home</a></li>
+        <li>
+          <button class="mobile-nav-link mobile-accordion-trigger" aria-expanded="false"
+                  data-en="Years" data-ar="السنوات">
+            Years
+            <svg class="chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-sub-menu" role="list">
+            <li><a href="first-year.html" class="mobile-sub-link" data-en="First Year" data-ar="الصف الأول">First Year</a></li>
+            <li><a href="second-year.html" class="mobile-sub-link" data-en="Second Year" data-ar="الصف الثاني">Second Year</a></li>
+            <li><a href="third-year.html" class="mobile-sub-link" data-en="Third Year" data-ar="الصف الثالث">Third Year</a></li>
+          </ul>
+        </li>
+        <li><a href="../index.html#about" class="mobile-nav-link" data-en="About" data-ar="عن المعلم">About</a></li>
+        <li><a href="../index.html#testimonials" class="mobile-nav-link" data-en="Reviews" data-ar="التقييمات">Reviews</a></li>
+        <li><a href="../index.html#contact" class="mobile-nav-link" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+        <li class="mobile-nav-cta">
+          <a href="login.html" class="btn btn-primary btn-full" data-en="Login" data-ar="تسجيل الدخول">Login</a>
+        </li>
+        <li class="mobile-nav-cta">
+          <a href="register.html" class="btn btn-outline btn-full" data-en="Register Now" data-ar="سجّل الآن">Register Now</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /Mobile Menu -->
+
+  </header>
+  <!-- /NAVIGATION -->
+
+
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════════
+         AUTH SECTION — LOGIN
+    ═══════════════════════════════════════════ -->
+    <section class="auth-section" id="login" aria-labelledby="login-heading">
+
+      <!-- Animated background grid (reuses hero visual language) -->
+      <div class="hero-grid-bg" aria-hidden="true">
+        <div class="grid-line grid-line--h" style="top:20%"></div>
+        <div class="grid-line grid-line--h" style="top:50%"></div>
+        <div class="grid-line grid-line--h" style="top:80%"></div>
+        <div class="grid-line grid-line--v" style="left:15%"></div>
+        <div class="grid-line grid-line--v" style="left:45%"></div>
+        <div class="grid-line grid-line--v" style="left:75%"></div>
+        <div class="grid-orb grid-orb--1" aria-hidden="true"></div>
+        <div class="grid-orb grid-orb--2" aria-hidden="true"></div>
+      </div>
+
+      <div class="container auth-inner">
+
+        <!-- Visual / Brand Side -->
+        <div class="auth-visual" data-animate="fade-right" aria-hidden="true">
+          <div class="hero-card hero-card--main auth-visual-card">
+            <div class="hcard-header">
+              <div class="hcard-avatar">
+                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="40" cy="40" r="40" fill="currentColor" opacity="0.08"/>
+                  <circle cx="40" cy="30" r="14" fill="currentColor" opacity="0.5"/>
+                  <ellipse cx="40" cy="64" rx="22" ry="14" fill="currentColor" opacity="0.4"/>
+                </svg>
+              </div>
+              <div class="hcard-info">
+                <p class="hcard-name" data-en="Mr. Ahmed Hassan" data-ar="أ. أحمد حسن">Mr. Ahmed Hassan</p>
+                <p class="hcard-role" data-en="Math & Science Teacher" data-ar="معلم رياضيات وعلوم">Math & Science Teacher</p>
+                <div class="hcard-badge">
+                  <span class="badge-dot" aria-hidden="true"></span>
+                  <span data-en="Online Now" data-ar="متاح الآن">Online Now</span>
+                </div>
+              </div>
+            </div>
+            <div class="hcard-subjects">
+              <span class="subject-tag" data-en="Algebra" data-ar="الجبر">Algebra</span>
+              <span class="subject-tag" data-en="Geometry" data-ar="الهندسة">Geometry</span>
+              <span class="subject-tag" data-en="Physics" data-ar="الفيزياء">Physics</span>
+              <span class="subject-tag" data-en="Chemistry" data-ar="الكيمياء">Chemistry</span>
+            </div>
+          </div>
+
+          <h2 class="auth-visual-heading"
+              data-en="Welcome Back!" data-ar="مرحباً بعودتك!">Welcome Back!</h2>
+          <p class="auth-visual-text"
+             data-en="Log in to continue your lessons, track your progress, and access your exam preparation materials."
+             data-ar="سجّل الدخول لمتابعة دروسك، وتتبع تقدمك، والوصول إلى مواد الإعداد للامتحانات.">
+            Log in to continue your lessons, track your progress, and access your exam preparation materials.
+          </p>
+        </div>
+
+        <!-- Form Side -->
+        <div class="auth-form-wrapper" data-animate="fade-left">
+          <div class="auth-form-card">
+
+            <p class="section-eyebrow" data-en="Welcome Back" data-ar="مرحباً بعودتك">Welcome Back</p>
+            <h1 class="section-heading auth-heading" id="login-heading"
+                data-en="Login to Your Account" data-ar="تسجيل الدخول إلى حسابك">Login to Your Account</h1>
+            <p class="auth-sub"
+               data-en="Enter your details below to access your classroom."
+               data-ar="أدخل بياناتك أدناه للوصول إلى فصلك الدراسي.">
+              Enter your details below to access your classroom.
+            </p>
+
+            <form class="contact-form auth-form" id="login-form" novalidate aria-label="Login form">
+
+              <div class="form-group">
+                <label for="login-email" data-en="Email Address" data-ar="البريد الإلكتروني">Email Address</label>
+                <input type="email" id="login-email" name="email" required autocomplete="email"
+                       aria-required="true" />
+                <span class="form-error" id="login-email-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="login-password" data-en="Password" data-ar="كلمة المرور">Password</label>
+                <div class="password-field">
+                  <input type="password" id="login-password" name="password" required autocomplete="current-password"
+                         aria-required="true" />
+                  <button type="button" class="password-toggle" id="login-password-toggle"
+                          aria-label="Show password" aria-pressed="false" data-target="login-password">
+                    <svg class="icon-eye" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                      <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/>
+                    </svg>
+                    <svg class="icon-eye-off" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M3 3l18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                      <path d="M10.6 5.2A10.6 10.6 0 0 1 12 5c6.5 0 10 7 10 7a16.6 16.6 0 0 1-3.2 4.1M6.6 6.6C4 8.3 2 12 2 12s3.5 7 10 7a10 10 0 0 0 4.2-.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M9.5 9.8a3 3 0 0 0 4.2 4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+                <span class="form-error" id="login-password-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="auth-form-row">
+                <label class="checkbox-field">
+                  <input type="checkbox" id="login-remember" name="remember" />
+                  <span class="checkbox-box" aria-hidden="true"></span>
+                  <span data-en="Remember me" data-ar="تذكرني">Remember me</span>
+                </label>
+                <a href="#" class="auth-link" data-en="Forgot password?" data-ar="نسيت كلمة المرور؟">Forgot password?</a>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full btn-lg" id="login-submit">
+                <span data-en="Login" data-ar="تسجيل الدخول">Login</span>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+
+              <!-- Success state -->
+              <div class="form-success" id="login-success" hidden>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p data-en="Login successful! Redirecting…" data-ar="تم تسجيل الدخول بنجاح! جارٍ التحويل…">Login successful! Redirecting…</p>
+              </div>
+            </form>
+
+            <div class="auth-divider">
+              <span data-en="or" data-ar="أو">or</span>
+            </div>
+
+            <p class="auth-switch">
+              <span data-en="Don't have an account?" data-ar="ليس لديك حساب؟">Don't have an account?</span>
+              <a href="register.html" data-en="Register now" data-ar="سجّل الآن">Register now</a>
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- /AUTH SECTION -->
+
+  </main>
+  <!-- /MAIN -->
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-brand" aria-label="Go to homepage">
+          <div class="brand-icon" aria-hidden="true">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="10" fill="currentColor" opacity="0.12"/>
+              <path d="M18 8 L18 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M7 12 Q12.5 9 18 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M7 18 Q12.5 15 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M7 24 Q12.5 21 18 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M29 12 Q23.5 9 18 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M29 18 Q23.5 15 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M29 24 Q23.5 21 18 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name" data-en="Mr. Ahmed Hassan" data-ar="أ. أحمد حسن">Mr. Ahmed Hassan</span>
+            <span class="brand-subtitle" data-en="Educational Platform" data-ar="المنصة التعليمية">Educational Platform</span>
+          </div>
+        </a>
+        <p class="footer-tagline"
+           data-en="Empowering students with knowledge, one lesson at a time."
+           data-ar="تمكين الطلاب بالمعرفة، درساً في كل مرة.">
+          Empowering students with knowledge, one lesson at a time.
+        </p>
+      </div>
+
+      <div class="footer-links-group">
+        <h3 class="footer-links-title" data-en="Courses" data-ar="الدورات">Courses</h3>
+        <ul role="list">
+          <li><a href="first-year.html" data-en="First Year" data-ar="الصف الأول">First Year</a></li>
+          <li><a href="second-year.html" data-en="Second Year" data-ar="الصف الثاني">Second Year</a></li>
+          <li><a href="third-year.html" data-en="Third Year" data-ar="الصف الثالث">Third Year</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-group">
+        <h3 class="footer-links-title" data-en="Platform" data-ar="المنصة">Platform</h3>
+        <ul role="list">
+          <li><a href="../index.html#about" data-en="About the Teacher" data-ar="عن المعلم">About the Teacher</a></li>
+          <li><a href="../index.html#testimonials" data-en="Student Reviews" data-ar="تقييمات الطلاب">Student Reviews</a></li>
+          <li><a href="../index.html#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+          <li><a href="login.html" data-en="Login" data-ar="تسجيل الدخول">Login</a></li>
+          <li><a href="register.html" data-en="Register" data-ar="التسجيل">Register</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-group">
+        <h3 class="footer-links-title" data-en="Contact" data-ar="التواصل">Contact</h3>
+        <ul role="list">
+          <li><a href="mailto:ahmed.hassan@edu.example.com">ahmed.hassan@edu.example.com</a></li>
+          <li><a href="tel:+201234567890">+20 123 456 7890</a></li>
+          <li><span data-en="Cairo, Egypt" data-ar="القاهرة، مصر">Cairo, Egypt</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="footer-copy">
+          <span data-en="© 2025 Mr. Ahmed Hassan. All rights reserved." data-ar="© 2025 أ. أحمد حسن. جميع الحقوق محفوظة.">
+            © 2025 Mr. Ahmed Hassan. All rights reserved.
+          </span>
+        </p>
+        <div class="footer-bottom-controls">
+          <button class="ctrl-btn lang-toggle" id="footer-lang-toggle" aria-label="Switch language">
+            <span id="footer-lang-label">عربي</span>
+          </button>
+          <button class="ctrl-btn theme-toggle" id="footer-theme-toggle" aria-label="Toggle dark mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <!-- /FOOTER -->
+
+
+  <!-- ═══════════════════════════════════════════
+       SCROLL TO TOP BUTTON
+  ═══════════════════════════════════════════ -->
+  <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top" hidden>
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M18 15l-6-6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+
+  <!-- ═══════════════════════════════════════════
+       JAVASCRIPT
+  ═══════════════════════════════════════════ -->
+  <script src="../js/darkmode.js" defer></script>
+  <script src="../js/language.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/auth.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mr. Ahmed Hassan – Expert Math & Science Tutor. Interactive lessons for first, second, and third year students." />
+  <meta name="author" content="Mr. Ahmed Hassan" />
+  <title>Mr. Ahmed Hassan | Educational Platform</title>
+
+  <!-- ═══════════════════════════════════════════
+       FONTS
+  ═══════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!--
+    Display: Sora  (geometric, modern, excellent for headings)
+    Body:    Inter (highly legible, versatile utility face)
+    Arabic:  Cairo (pairs beautifully with both; clean geometric)
+  -->
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets (loaded in Phase 2 & 3) -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <!-- Favicon placeholder (inline SVG as data URI) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       LOADING SCREEN
+  ═══════════════════════════════════════════ -->
+  <div id="loading-screen" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Open book icon -->
+          <rect x="4" y="14" width="52" height="36" rx="4" fill="currentColor" opacity="0.15"/>
+          <path d="M30 18 L30 46" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M8 20 Q19 16 30 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M8 28 Q19 24 30 28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M8 36 Q19 32 30 36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M52 20 Q41 16 30 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M52 28 Q41 24 30 28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M52 36 Q41 32 30 36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="loader-bar-track">
+        <div class="loader-bar-fill" id="loader-bar"></div>
+      </div>
+      <p class="loader-text" id="loader-text" data-en="Loading your classroom…" data-ar="جارٍ تحميل الفصل الدراسي…">Loading your classroom…</p>
+    </div>
+  </div>
+  <!-- /LOADING SCREEN -->
+
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <header class="site-header" id="site-header" role="banner">
+    <nav class="nav-container" aria-label="Main navigation">
+
+      <!-- Brand -->
+      <a href="index.html" class="nav-brand" aria-label="Go to homepage">
+        <div class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="10" fill="currentColor" opacity="0.12"/>
+            <path d="M18 8 L18 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M7 12 Q12.5 9 18 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M7 18 Q12.5 15 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M7 24 Q12.5 21 18 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M29 12 Q23.5 9 18 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M29 18 Q23.5 15 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M29 24 Q23.5 21 18 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name" data-en="Mr. Ahmed Hassan" data-ar="أ. أحمد حسن">Mr. Ahmed Hassan</span>
+          <span class="brand-subtitle" data-en="Educational Platform" data-ar="المنصة التعليمية">Educational Platform</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="nav-link active" data-en="Home" data-ar="الرئيسية">Home</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false"
+                  data-en="Years" data-ar="السنوات">
+            Years
+            <svg class="chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="dropdown-menu" role="list">
+            <li>
+              <a href="pages/first-year.html" class="dropdown-link">
+                <span class="dropdown-icon" aria-hidden="true">①</span>
+                <span data-en="First Year" data-ar="الصف الأول">First Year</span>
+              </a>
+            </li>
+            <li>
+              <a href="pages/second-year.html" class="dropdown-link">
+                <span class="dropdown-icon" aria-hidden="true">②</span>
+                <span data-en="Second Year" data-ar="الصف الثاني">Second Year</span>
+              </a>
+            </li>
+            <li>
+              <a href="pages/third-year.html" class="dropdown-link">
+                <span class="dropdown-icon" aria-hidden="true">③</span>
+                <span data-en="Third Year" data-ar="الصف الثالث">Third Year</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#about" class="nav-link" data-en="About" data-ar="عن المعلم">About</a></li>
+        <li><a href="#testimonials" class="nav-link" data-en="Reviews" data-ar="التقييمات">Reviews</a></li>
+        <li><a href="#contact" class="nav-link" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+      </ul>
+
+      <!-- Nav Controls -->
+      <div class="nav-controls">
+
+        <!-- Language Toggle -->
+        <button class="ctrl-btn lang-toggle" id="lang-toggle" aria-label="Switch to Arabic language">
+          <span class="lang-label" id="lang-label">عربي</span>
+        </button>
+
+        <!-- Dark Mode Toggle -->
+        <button class="ctrl-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <!-- Sun icon (shown in dark mode) -->
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <!-- Login -->
+        <a href="pages/login.html" class="btn btn-outline btn-sm" data-en="Login" data-ar="تسجيل الدخول">Login</a>
+
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+      <ul class="mobile-nav-links" role="list">
+        <li><a href="index.html" class="mobile-nav-link active" data-en="Home" data-ar="الرئيسية">Home</a></li>
+        <li>
+          <button class="mobile-nav-link mobile-accordion-trigger" aria-expanded="false"
+                  data-en="Years" data-ar="السنوات">
+            Years
+            <svg class="chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="mobile-sub-menu" role="list">
+            <li><a href="pages/first-year.html" class="mobile-sub-link" data-en="First Year" data-ar="الصف الأول">First Year</a></li>
+            <li><a href="pages/second-year.html" class="mobile-sub-link" data-en="Second Year" data-ar="الصف الثاني">Second Year</a></li>
+            <li><a href="pages/third-year.html" class="mobile-sub-link" data-en="Third Year" data-ar="الصف الثالث">Third Year</a></li>
+          </ul>
+        </li>
+        <li><a href="#about" class="mobile-nav-link" data-en="About" data-ar="عن المعلم">About</a></li>
+        <li><a href="#testimonials" class="mobile-nav-link" data-en="Reviews" data-ar="التقييمات">Reviews</a></li>
+        <li><a href="#contact" class="mobile-nav-link" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+        <li class="mobile-nav-cta">
+          <a href="pages/login.html" class="btn btn-primary btn-full" data-en="Login" data-ar="تسجيل الدخول">Login</a>
+        </li>
+        <li class="mobile-nav-cta">
+          <a href="pages/register.html" class="btn btn-outline btn-full" data-en="Register Now" data-ar="سجّل الآن">Register Now</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /Mobile Menu -->
+
+  </header>
+  <!-- /NAVIGATION -->
+
+
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════════
+         HERO SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+
+      <!-- Animated background grid -->
+      <div class="hero-grid-bg" aria-hidden="true">
+        <div class="grid-line grid-line--h" style="top:20%"></div>
+        <div class="grid-line grid-line--h" style="top:50%"></div>
+        <div class="grid-line grid-line--h" style="top:80%"></div>
+        <div class="grid-line grid-line--v" style="left:15%"></div>
+        <div class="grid-line grid-line--v" style="left:45%"></div>
+        <div class="grid-line grid-line--v" style="left:75%"></div>
+        <div class="grid-orb grid-orb--1" aria-hidden="true"></div>
+        <div class="grid-orb grid-orb--2" aria-hidden="true"></div>
+      </div>
+
+      <div class="container hero-inner">
+        <!-- Text Column -->
+        <div class="hero-content" data-animate="fade-up">
+          <div class="hero-eyebrow">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            <span data-en="Welcome to the Classroom" data-ar="مرحباً بك في الفصل الدراسي">Welcome to the Classroom</span>
+          </div>
+
+          <h1 class="hero-heading" id="hero-heading">
+            <span class="hero-heading--line" data-en="Learn Smarter," data-ar="تعلّم بذكاء،">Learn Smarter,</span>
+            <span class="hero-heading--line hero-heading--accent" data-en="Achieve More." data-ar="حقّق المزيد.">Achieve More.</span>
+          </h1>
+
+          <p class="hero-description" data-en="Expert-led Math and Science lessons designed for First, Second, and Third Year students. Clear explanations, practical exercises, and real results."
+             data-ar="دروس الرياضيات والعلوم بإشراف متخصص، مصمّمة لطلاب الصف الأول والثاني والثالث. شرح واضح، تمارين عملية، ونتائج حقيقية.">
+            Expert-led Math and Science lessons designed for First, Second, and Third Year students. Clear explanations, practical exercises, and real results.
+          </p>
+
+          <div class="hero-actions">
+            <a href="pages/register.html" class="btn btn-primary btn-lg">
+              <span data-en="Start Learning Free" data-ar="ابدأ التعلم مجاناً">Start Learning Free</span>
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="#years" class="btn btn-ghost btn-lg">
+              <span data-en="Explore Courses" data-ar="استكشف الدورات">Explore Courses</span>
+            </a>
+          </div>
+
+          <!-- Quick stats -->
+          <div class="hero-stats" role="list">
+            <div class="stat-item" role="listitem">
+              <strong class="stat-number">500<span class="stat-plus">+</span></strong>
+              <span class="stat-label" data-en="Students" data-ar="طالب">Students</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item" role="listitem">
+              <strong class="stat-number">12<span class="stat-plus">+</span></strong>
+              <span class="stat-label" data-en="Courses" data-ar="دورة">Courses</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item" role="listitem">
+              <strong class="stat-number">98<span class="stat-plus">%</span></strong>
+              <span class="stat-label" data-en="Pass Rate" data-ar="نسبة النجاح">Pass Rate</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Column -->
+        <div class="hero-visual" data-animate="fade-left" aria-hidden="true">
+          <div class="hero-card hero-card--main">
+            <div class="hcard-header">
+              <div class="hcard-avatar">
+                <!-- Teacher illustration placeholder — abstract geometric -->
+                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="40" cy="40" r="40" fill="currentColor" opacity="0.08"/>
+                  <circle cx="40" cy="30" r="14" fill="currentColor" opacity="0.5"/>
+                  <ellipse cx="40" cy="64" rx="22" ry="14" fill="currentColor" opacity="0.4"/>
+                </svg>
+              </div>
+              <div class="hcard-info">
+                <p class="hcard-name" data-en="Mr. Ahmed Hassan" data-ar="أ. أحمد حسن">Mr. Ahmed Hassan</p>
+                <p class="hcard-role" data-en="Math & Science Teacher" data-ar="معلم رياضيات وعلوم">Math & Science Teacher</p>
+                <div class="hcard-badge">
+                  <span class="badge-dot" aria-hidden="true"></span>
+                  <span data-en="Online Now" data-ar="متاح الآن">Online Now</span>
+                </div>
+              </div>
+            </div>
+            <div class="hcard-subjects">
+              <span class="subject-tag" data-en="Algebra" data-ar="الجبر">Algebra</span>
+              <span class="subject-tag" data-en="Geometry" data-ar="الهندسة">Geometry</span>
+              <span class="subject-tag" data-en="Physics" data-ar="الفيزياء">Physics</span>
+              <span class="subject-tag" data-en="Chemistry" data-ar="الكيمياء">Chemistry</span>
+            </div>
+          </div>
+
+          <!-- Floating accent cards -->
+          <div class="hero-card hero-card--float hero-card--lesson">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <p class="float-card-label" data-en="New Lesson" data-ar="درس جديد">New Lesson</p>
+              <p class="float-card-value" data-en="Quadratic Equations" data-ar="المعادلات التربيعية">Quadratic Equations</p>
+            </div>
+          </div>
+
+          <div class="hero-card hero-card--float hero-card--score">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <p class="float-card-label" data-en="Top Score" data-ar="أعلى درجة">Top Score</p>
+              <p class="float-card-value">98 / 100</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="scroll-dot"></div>
+      </div>
+
+    </section>
+    <!-- /HERO -->
+
+
+    <!-- ═══════════════════════════════════════════
+         ANNOUNCEMENT BANNER
+    ═══════════════════════════════════════════ -->
+    <div class="announcement-banner" role="status" aria-live="polite">
+      <div class="container announcement-inner">
+        <span class="announcement-icon" aria-hidden="true">📢</span>
+        <p data-en="New exam prep sessions available for Third Year students! Limited seats — register now."
+           data-ar="جلسات تحضير الامتحانات متاحة لطلاب الصف الثالث! مقاعد محدودة — سجّل الآن.">
+          New exam prep sessions available for Third Year students! Limited seats — register now.
+        </p>
+        <a href="pages/register.html" class="announcement-link" data-en="Register →" data-ar="← سجّل">Register →</a>
+      </div>
+    </div>
+    <!-- /ANNOUNCEMENT -->
+
+
+    <!-- ═══════════════════════════════════════════
+         YEARS / COURSES SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="section years-section" id="years" aria-labelledby="years-heading">
+      <div class="container">
+
+        <div class="section-header" data-animate="fade-up">
+          <p class="section-eyebrow" data-en="Choose Your Level" data-ar="اختر مستواك">Choose Your Level</p>
+          <h2 class="section-heading" id="years-heading"
+              data-en="What Year Are You In?" data-ar="في أيّ صف أنت؟">What Year Are You In?</h2>
+          <p class="section-subheading"
+             data-en="Select your academic year to access tailored lessons, exercises, and exam preparation materials."
+             data-ar="اختر سنتك الدراسية للوصول إلى الدروس المخصصة والتمارين ومواد الإعداد للامتحانات.">
+            Select your academic year to access tailored lessons, exercises, and exam preparation materials.
+          </p>
+        </div>
+
+        <div class="years-grid">
+
+          <!-- First Year Card -->
+          <article class="year-card" data-animate="fade-up" data-delay="0">
+            <div class="year-card-glow" aria-hidden="true"></div>
+            <div class="year-card-inner">
+              <div class="year-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="24" r="22" fill="currentColor" opacity="0.1"/>
+                  <path d="M24 12v24M14 18h20M14 30h20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span class="year-badge" data-en="Year 1" data-ar="الصف الأول">Year 1</span>
+              <h3 class="year-card-title" data-en="First Year" data-ar="الصف الأول الثانوي">First Year</h3>
+              <p class="year-card-desc"
+                 data-en="Foundational Math and Science concepts. Build the skills you need for every year ahead."
+                 data-ar="مفاهيم أساسية في الرياضيات والعلوم. ابنِ المهارات التي تحتاجها في كل السنوات القادمة.">
+                Foundational Math and Science concepts. Build the skills you need for every year ahead.
+              </p>
+              <ul class="year-card-subjects" role="list">
+                <li data-en="Algebra Basics" data-ar="أساسيات الجبر">Algebra Basics</li>
+                <li data-en="Geometry" data-ar="الهندسة">Geometry</li>
+                <li data-en="Introduction to Physics" data-ar="مقدمة في الفيزياء">Introduction to Physics</li>
+                <li data-en="General Chemistry" data-ar="الكيمياء العامة">General Chemistry</li>
+              </ul>
+              <a href="pages/first-year.html" class="btn btn-primary year-card-btn">
+                <span data-en="View Courses" data-ar="عرض الدورات">View Courses</span>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Second Year Card -->
+          <article class="year-card year-card--featured" data-animate="fade-up" data-delay="100">
+            <div class="year-card-glow" aria-hidden="true"></div>
+            <div class="year-card-badge-popular" data-en="Most Popular" data-ar="الأكثر شعبية">Most Popular</div>
+            <div class="year-card-inner">
+              <div class="year-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="24" r="22" fill="currentColor" opacity="0.15"/>
+                  <path d="M15 30 Q15 18 24 18 Q33 18 33 30" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                  <line x1="20" y1="30" x2="28" y2="30" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span class="year-badge" data-en="Year 2" data-ar="الصف الثاني">Year 2</span>
+              <h3 class="year-card-title" data-en="Second Year" data-ar="الصف الثاني الثانوي">Second Year</h3>
+              <p class="year-card-desc"
+                 data-en="Intermediate topics with deeper problem-solving. Sharpen your analytical thinking and exam techniques."
+                 data-ar="موضوعات متوسطة مع حل مشكلات أعمق. صقل تفكيرك التحليلي وأساليب الامتحانات.">
+                Intermediate topics with deeper problem-solving. Sharpen your analytical thinking and exam techniques.
+              </p>
+              <ul class="year-card-subjects" role="list">
+                <li data-en="Advanced Algebra" data-ar="الجبر المتقدم">Advanced Algebra</li>
+                <li data-en="Trigonometry" data-ar="حساب المثلثات">Trigonometry</li>
+                <li data-en="Mechanics" data-ar="الميكانيكا">Mechanics</li>
+                <li data-en="Organic Chemistry" data-ar="الكيمياء العضوية">Organic Chemistry</li>
+              </ul>
+              <a href="pages/second-year.html" class="btn btn-primary year-card-btn">
+                <span data-en="View Courses" data-ar="عرض الدورات">View Courses</span>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Third Year Card -->
+          <article class="year-card" data-animate="fade-up" data-delay="200">
+            <div class="year-card-glow" aria-hidden="true"></div>
+            <div class="year-card-inner">
+              <div class="year-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="24" r="22" fill="currentColor" opacity="0.1"/>
+                  <path d="M24 14 L28 22 L37 23 L30.5 29 L32 38 L24 34 L16 38 L17.5 29 L11 23 L20 22 Z"
+                        stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="none"/>
+                </svg>
+              </div>
+              <span class="year-badge" data-en="Year 3" data-ar="الصف الثالث">Year 3</span>
+              <h3 class="year-card-title" data-en="Third Year" data-ar="الصف الثالث الثانوي">Third Year</h3>
+              <p class="year-card-desc"
+                 data-en="Advanced exam preparation for final-year students. Intensive revision, past papers, and model answers."
+                 data-ar="إعداد متقدم للامتحانات لطلاب السنة الأخيرة. مراجعة مكثفة وأوراق الامتحانات السابقة والإجابات النموذجية.">
+                Advanced exam preparation for final-year students. Intensive revision, past papers, and model answers.
+              </p>
+              <ul class="year-card-subjects" role="list">
+                <li data-en="Calculus" data-ar="حساب التفاضل والتكامل">Calculus</li>
+                <li data-en="Statistics" data-ar="الإحصاء">Statistics</li>
+                <li data-en="Advanced Physics" data-ar="الفيزياء المتقدمة">Advanced Physics</li>
+                <li data-en="Chemistry Exam Prep" data-ar="الكيمياء - إعداد الامتحان">Chemistry Exam Prep</li>
+              </ul>
+              <a href="pages/third-year.html" class="btn btn-primary year-card-btn">
+                <span data-en="View Courses" data-ar="عرض الدورات">View Courses</span>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+    <!-- /YEARS -->
+
+
+    <!-- ═══════════════════════════════════════════
+         FEATURES / WHY US SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="section features-section" id="features" aria-labelledby="features-heading">
+      <div class="container">
+
+        <div class="section-header" data-animate="fade-up">
+          <p class="section-eyebrow" data-en="Why Students Choose Us" data-ar="لماذا يختارنا الطلاب">Why Students Choose Us</p>
+          <h2 class="section-heading" id="features-heading"
+              data-en="Everything You Need to Succeed" data-ar="كل ما تحتاجه للنجاح">Everything You Need to Succeed</h2>
+        </div>
+
+        <div class="features-grid">
+
+          <div class="feature-card" data-animate="fade-up" data-delay="0">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none">
+                <path d="M16 4 L28 10 V16 C28 22 22 27 16 29 C10 27 4 22 4 16 V10 Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M11 16 L14 19 L21 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-title" data-en="Expert Teacher" data-ar="معلم خبير">Expert Teacher</h3>
+            <p class="feature-desc" data-en="Over 10 years of classroom experience with a proven track record of student success."
+               data-ar="أكثر من 10 سنوات من الخبرة الميدانية مع سجل حافل بنجاح الطلاب.">
+              Over 10 years of classroom experience with a proven track record of student success.
+            </p>
+          </div>
+
+          <div class="feature-card" data-animate="fade-up" data-delay="80">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none">
+                <rect x="4" y="6" width="24" height="18" rx="3" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M4 12h24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M10 18h4M18 18h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-title" data-en="Interactive Lessons" data-ar="دروس تفاعلية">Interactive Lessons</h3>
+            <p class="feature-desc" data-en="Structured video lessons, diagrams, and step-by-step solutions for every topic."
+               data-ar="دروس فيديو منظمة ورسوم بيانية وحلول خطوة بخطوة لكل موضوع.">
+              Structured video lessons, diagrams, and step-by-step solutions for every topic.
+            </p>
+          </div>
+
+          <div class="feature-card" data-animate="fade-up" data-delay="160">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M16 10 v6 l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-title" data-en="Flexible Schedule" data-ar="جدول مرن">Flexible Schedule</h3>
+            <p class="feature-desc" data-en="Learn at your own pace. Revisit lessons any time, from any device."
+               data-ar="تعلّم وفق وتيرتك الخاصة. راجع الدروس في أي وقت ومن أي جهاز.">
+              Learn at your own pace. Revisit lessons any time, from any device.
+            </p>
+          </div>
+
+          <div class="feature-card" data-animate="fade-up" data-delay="0">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none">
+                <path d="M6 28 L6 18 L16 12 L26 18 L26 28" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <rect x="12" y="20" width="8" height="8" stroke="currentColor" stroke-width="1.8"/>
+              </svg>
+            </div>
+            <h3 class="feature-title" data-en="Past Exam Papers" data-ar="أوراق الامتحانات السابقة">Past Exam Papers</h3>
+            <p class="feature-desc" data-en="Access years of past papers with fully worked model answers and marking schemes."
+               data-ar="الوصول إلى سنوات من الأوراق السابقة مع إجابات نموذجية ومخططات تصحيح.">
+              Access years of past papers with fully worked model answers and marking schemes.
+            </p>
+          </div>
+
+          <div class="feature-card" data-animate="fade-up" data-delay="80">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none">
+                <circle cx="12" cy="10" r="5" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="22" cy="10" r="5" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M4 26 C4 20 8 17 12 17 C16 17 20 20 20 26" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                <path d="M22 17 C26 17 28 20 28 26" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+              </svg>
+            </div>
+            <h3 class="feature-title" data-en="Live Q&amp;A Sessions" data-ar="جلسات أسئلة وأجوبة مباشرة">Live Q&A Sessions</h3>
+            <p class="feature-desc" data-en="Join weekly live sessions to ask questions and solve problems together in real time."
+               data-ar="انضم إلى جلسات مباشرة أسبوعية لطرح الأسئلة وحل المسائل معاً في الوقت الفعلي.">
+              Join weekly live sessions to ask questions and solve problems together in real time.
+            </p>
+          </div>
+
+          <div class="feature-card" data-animate="fade-up" data-delay="160">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none">
+                <path d="M28 14 C28 20 22 26 16 28 C10 26 4 20 4 14 V7 L16 4 L28 7 Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M12 15 L15 18 L20 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-title" data-en="Certificates" data-ar="شهادات">Certificates</h3>
+            <p class="feature-desc" data-en="Earn verified certificates of completion to add to your academic portfolio."
+               data-ar="احصل على شهادات إتمام معتمدة لإضافتها إلى محفظتك الأكاديمية.">
+              Earn verified certificates of completion to add to your academic portfolio.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- /FEATURES -->
+
+
+    <!-- ═══════════════════════════════════════════
+         ABOUT SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="section about-section" id="about" aria-labelledby="about-heading">
+      <div class="container about-inner">
+
+        <!-- Visual side -->
+        <div class="about-visual" data-animate="fade-right">
+          <div class="about-image-frame">
+            <!-- Geometric abstract teacher portrait -->
+            <svg viewBox="0 0 320 380" fill="none" xmlns="http://www.w3.org/2000/svg" class="about-portrait" role="img" aria-label="Portrait illustration of Mr. Ahmed Hassan">
+              <rect width="320" height="380" rx="24" fill="currentColor" opacity="0.05"/>
+              <!-- Chalkboard background shape -->
+              <rect x="30" y="30" width="260" height="200" rx="12" fill="currentColor" opacity="0.08"/>
+              <!-- Chalk equations decoration -->
+              <text x="50" y="80" font-family="monospace" font-size="14" fill="currentColor" opacity="0.25">ax² + bx + c = 0</text>
+              <text x="60" y="110" font-family="monospace" font-size="12" fill="currentColor" opacity="0.2">∫f(x)dx</text>
+              <text x="160" y="100" font-family="monospace" font-size="11" fill="currentColor" opacity="0.18">F = ma</text>
+              <text x="80" y="145" font-family="monospace" font-size="13" fill="currentColor" opacity="0.22">E = mc²</text>
+              <text x="170" y="140" font-family="monospace" font-size="10" fill="currentColor" opacity="0.17">sin²θ+cos²θ=1</text>
+              <!-- Teacher figure (geometric) -->
+              <circle cx="160" cy="270" r="36" fill="currentColor" opacity="0.45"/>
+              <ellipse cx="160" cy="340" rx="55" ry="32" fill="currentColor" opacity="0.35"/>
+              <!-- Mortarboard cap -->
+              <ellipse cx="160" cy="237" rx="40" ry="8" fill="currentColor" opacity="0.5"/>
+              <rect x="148" y="220" width="24" height="20" fill="currentColor" opacity="0.4"/>
+              <line x1="195" y1="237" x2="195" y2="256" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+              <circle cx="195" cy="258" r="4" fill="currentColor" opacity="0.5"/>
+            </svg>
+
+            <!-- Floating achievement chips -->
+            <div class="about-chip about-chip--1">
+              <strong>10+</strong>
+              <span data-en="Years Teaching" data-ar="سنوات تدريس">Years Teaching</span>
+            </div>
+            <div class="about-chip about-chip--2">
+              <strong>500+</strong>
+              <span data-en="Students Taught" data-ar="طالب تخرّج">Students Taught</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text side -->
+        <div class="about-content" data-animate="fade-left">
+          <p class="section-eyebrow" data-en="Meet the Teacher" data-ar="تعرّف على المعلم">Meet the Teacher</p>
+          <h2 class="section-heading" id="about-heading"
+              data-en="Mr. Ahmed Hassan" data-ar="أ. أحمد حسن">Mr. Ahmed Hassan</h2>
+
+          <p class="about-bio"
+             data-en="With over a decade of experience teaching Math and Science to secondary school students, Mr. Ahmed Hassan has developed a unique teaching style that combines clarity, patience, and real-world examples. His courses are designed to remove the fear of difficult subjects and replace it with genuine understanding and confidence."
+             data-ar="بخبرة تزيد على عقد في تدريس الرياضيات والعلوم لطلاب المرحلة الثانوية، طوّر أ. أحمد حسن أسلوباً تدريسياً فريداً يجمع الوضوح والصبر والأمثلة الواقعية. صُمِّمت دوراته لإزالة الخوف من المواد الصعبة واستبداله بفهم حقيقي وثقة بالنفس.">
+            With over a decade of experience teaching Math and Science to secondary school students, Mr. Ahmed Hassan has developed a unique teaching style that combines clarity, patience, and real-world examples. His courses are designed to remove the fear of difficult subjects and replace it with genuine understanding and confidence.
+          </p>
+
+          <div class="about-credentials">
+            <div class="credential">
+              <div class="credential-icon" aria-hidden="true">🎓</div>
+              <div>
+                <p class="credential-title" data-en="B.Sc. in Mathematics" data-ar="بكالوريوس في الرياضيات">B.Sc. in Mathematics</p>
+                <p class="credential-inst" data-en="Cairo University" data-ar="جامعة القاهرة">Cairo University</p>
+              </div>
+            </div>
+            <div class="credential">
+              <div class="credential-icon" aria-hidden="true">📜</div>
+              <div>
+                <p class="credential-title" data-en="Diploma in Education" data-ar="دبلوم في التربية">Diploma in Education</p>
+                <p class="credential-inst" data-en="Ministry of Education Certified" data-ar="معتمد من وزارة التربية والتعليم">Ministry of Education Certified</p>
+              </div>
+            </div>
+            <div class="credential">
+              <div class="credential-icon" aria-hidden="true">🏆</div>
+              <div>
+                <p class="credential-title" data-en="Best Teacher Award 2022" data-ar="جائزة أفضل معلم 2022">Best Teacher Award 2022</p>
+                <p class="credential-inst" data-en="Regional Education Board" data-ar="مجلس التعليم الإقليمي">Regional Education Board</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="pages/register.html" class="btn btn-primary">
+            <span data-en="Join My Classes" data-ar="انضم إلى دروسي">Join My Classes</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+    <!-- /ABOUT -->
+
+
+    <!-- ═══════════════════════════════════════════
+         TESTIMONIALS SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="section testimonials-section" id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="container">
+
+        <div class="section-header" data-animate="fade-up">
+          <p class="section-eyebrow" data-en="Student Reviews" data-ar="تقييمات الطلاب">Student Reviews</p>
+          <h2 class="section-heading" id="testimonials-heading"
+              data-en="What Students Say" data-ar="ماذا يقول الطلاب">What Students Say</h2>
+        </div>
+
+        <!-- Testimonials Track (scrollable carousel) -->
+        <div class="testimonials-track-wrapper" role="region" aria-label="Student testimonials carousel">
+          <div class="testimonials-track" id="testimonials-track">
+
+            <article class="testimonial-card" data-animate="fade-up" data-delay="0">
+              <div class="testimonial-stars" aria-label="5 out of 5 stars" role="img">
+                <span aria-hidden="true">★★★★★</span>
+              </div>
+              <blockquote class="testimonial-quote"
+                data-en="Mr. Hassan's explanations are the clearest I've ever heard. I went from failing Math to scoring 95 in my final exam. I owe him everything."
+                data-ar="شرح أ. حسن هو الأوضح الذي سمعته على الإطلاق. انتقلت من الرسوب في الرياضيات إلى الحصول على 95 في امتحاني النهائي. أنا مدين له بكل شيء.">
+                "Mr. Hassan's explanations are the clearest I've ever heard. I went from failing Math to scoring 95 in my final exam. I owe him everything."
+              </blockquote>
+              <footer class="testimonial-author">
+                <div class="author-avatar" aria-hidden="true">S</div>
+                <div>
+                  <p class="author-name" data-en="Sara Mohammed" data-ar="سارة محمد">Sara Mohammed</p>
+                  <p class="author-year" data-en="Third Year Student" data-ar="طالبة صف ثالث">Third Year Student</p>
+                </div>
+              </footer>
+            </article>
+
+            <article class="testimonial-card" data-animate="fade-up" data-delay="80">
+              <div class="testimonial-stars" aria-label="5 out of 5 stars" role="img">
+                <span aria-hidden="true">★★★★★</span>
+              </div>
+              <blockquote class="testimonial-quote"
+                data-en="The platform is incredibly easy to use, and the lessons are well-organized. I especially love the live Q&amp;A sessions — they make all the difference."
+                data-ar="المنصة سهلة الاستخدام بشكل لا يصدق، والدروس منظمة جيداً. أحب بشكل خاص جلسات الأسئلة والأجوبة المباشرة — إنها تصنع الفارق.">
+                "The platform is incredibly easy to use, and the lessons are well-organized. I especially love the live Q&A sessions — they make all the difference."
+              </blockquote>
+              <footer class="testimonial-author">
+                <div class="author-avatar" aria-hidden="true">K</div>
+                <div>
+                  <p class="author-name" data-en="Khaled Ibrahim" data-ar="خالد إبراهيم">Khaled Ibrahim</p>
+                  <p class="author-year" data-en="Second Year Student" data-ar="طالب صف ثاني">Second Year Student</p>
+                </div>
+              </footer>
+            </article>
+
+            <article class="testimonial-card" data-animate="fade-up" data-delay="160">
+              <div class="testimonial-stars" aria-label="5 out of 5 stars" role="img">
+                <span aria-hidden="true">★★★★★</span>
+              </div>
+              <blockquote class="testimonial-quote"
+                data-en="I struggled with Physics for two years. After just one month on this platform, everything clicked. Highly recommend to anyone who feels stuck."
+                data-ar="كنت أعاني مع الفيزياء لمدة عامين. بعد شهر واحد فقط على هذه المنصة، اتضحت كل الأمور. أنصح به بشدة لكل من يشعر بالعقبات.">
+                "I struggled with Physics for two years. After just one month on this platform, everything clicked. Highly recommend to anyone who feels stuck."
+              </blockquote>
+              <footer class="testimonial-author">
+                <div class="author-avatar" aria-hidden="true">N</div>
+                <div>
+                  <p class="author-name" data-en="Nour Ahmed" data-ar="نور أحمد">Nour Ahmed</p>
+                  <p class="author-year" data-en="Second Year Student" data-ar="طالبة صف ثاني">Second Year Student</p>
+                </div>
+              </footer>
+            </article>
+
+            <article class="testimonial-card" data-animate="fade-up" data-delay="240">
+              <div class="testimonial-stars" aria-label="4 out of 5 stars" role="img">
+                <span aria-hidden="true">★★★★☆</span>
+              </div>
+              <blockquote class="testimonial-quote"
+                data-en="The past exam papers section alone is worth signing up for. I practised every day for a month and walked into the exam room completely confident."
+                data-ar="قسم أوراق الامتحانات السابقة وحده يستحق الاشتراك. تدربت كل يوم لمدة شهر ودخلت قاعة الامتحان بثقة تامة.">
+                "The past exam papers section alone is worth signing up for. I practised every day for a month and walked into the exam room completely confident."
+              </blockquote>
+              <footer class="testimonial-author">
+                <div class="author-avatar" aria-hidden="true">O</div>
+                <div>
+                  <p class="author-name" data-en="Omar Youssef" data-ar="عمر يوسف">Omar Youssef</p>
+                  <p class="author-year" data-en="Third Year Student" data-ar="طالب صف ثالث">Third Year Student</p>
+                </div>
+              </footer>
+            </article>
+
+          </div><!-- /testimonials-track -->
+
+          <!-- Carousel Controls -->
+          <div class="testimonials-controls" role="group" aria-label="Carousel controls">
+            <button class="testimonials-prev" id="testimonials-prev" aria-label="Previous testimonials">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="testimonials-dots" id="testimonials-dots" role="list" aria-label="Testimonial pagination"></div>
+            <button class="testimonials-next" id="testimonials-next" aria-label="Next testimonials">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- /TESTIMONIALS -->
+
+
+    <!-- ═══════════════════════════════════════════
+         CTA BANNER
+    ═══════════════════════════════════════════ -->
+    <section class="cta-banner-section" aria-labelledby="cta-heading">
+      <div class="container cta-banner-inner" data-animate="fade-up">
+        <div class="cta-banner-orb" aria-hidden="true"></div>
+        <h2 class="cta-banner-heading" id="cta-heading"
+            data-en="Ready to Take the Next Step?" data-ar="هل أنت مستعد للخطوة التالية؟">
+          Ready to Take the Next Step?
+        </h2>
+        <p class="cta-banner-sub"
+           data-en="Join hundreds of students already improving their grades. No credit card required."
+           data-ar="انضم إلى مئات الطلاب الذين يحسّنون درجاتهم بالفعل. لا تحتاج إلى بطاقة ائتمانية.">
+          Join hundreds of students already improving their grades. No credit card required.
+        </p>
+        <div class="cta-banner-actions">
+          <a href="pages/register.html" class="btn btn-primary btn-lg">
+            <span data-en="Register Free" data-ar="سجّل مجاناً">Register Free</span>
+          </a>
+          <a href="#contact" class="btn btn-ghost-light btn-lg">
+            <span data-en="Contact Us" data-ar="تواصل معنا">Contact Us</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- /CTA BANNER -->
+
+
+    <!-- ═══════════════════════════════════════════
+         CONTACT SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="section contact-section" id="contact" aria-labelledby="contact-heading">
+      <div class="container contact-inner">
+
+        <!-- Info Column -->
+        <div class="contact-info" data-animate="fade-right">
+          <p class="section-eyebrow" data-en="Get In Touch" data-ar="تواصل معنا">Get In Touch</p>
+          <h2 class="section-heading" id="contact-heading"
+              data-en="Have a Question?" data-ar="هل لديك سؤال؟">Have a Question?</h2>
+          <p class="contact-desc"
+             data-en="Whether you want to know more about the courses, discuss a specific topic, or need help registering — send a message and I'll get back to you within 24 hours."
+             data-ar="سواء كنت تريد معرفة المزيد عن الدورات، أو مناقشة موضوع محدد، أو تحتاج مساعدة في التسجيل — أرسل رسالة وسأرد عليك خلال 24 ساعة.">
+            Whether you want to know more about the courses, discuss a specific topic, or need help registering — send a message and I'll get back to you within 24 hours.
+          </p>
+
+          <div class="contact-links">
+            <a href="mailto:ahmed.hassan@edu.example.com" class="contact-link">
+              <div class="contact-link-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M2 8l10 6 10-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span>ahmed.hassan@edu.example.com</span>
+            </a>
+            <a href="tel:+201234567890" class="contact-link">
+              <div class="contact-link-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.5 11.5 0 0 0 3.6.6 1 1 0 0 1 1 1V21a1 1 0 0 1-1 1A17 17 0 0 1 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.6 3.6a1 1 0 0 1-.25 1L6.6 10.8z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span>+20 123 456 7890</span>
+            </a>
+            <div class="contact-link">
+              <div class="contact-link-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="1.8"/>
+                  <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.8"/>
+                </svg>
+              </div>
+              <span data-en="Cairo, Egypt" data-ar="القاهرة، مصر">Cairo, Egypt</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Column -->
+        <div class="contact-form-wrapper" data-animate="fade-left">
+          <form class="contact-form" id="contact-form" novalidate aria-label="Contact form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name" data-en="Your Name" data-ar="اسمك">Your Name</label>
+                <input type="text" id="contact-name" name="name" required autocomplete="name"
+                       placeholder="" aria-required="true" />
+                <span class="form-error" id="contact-name-error" role="alert" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <label for="contact-phone" data-en="Phone Number" data-ar="رقم الهاتف">Phone Number</label>
+                <input type="tel" id="contact-phone" name="phone" autocomplete="tel"
+                       placeholder="" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contact-email" data-en="Email Address" data-ar="البريد الإلكتروني">Email Address</label>
+              <input type="email" id="contact-email" name="email" required autocomplete="email"
+                     placeholder="" aria-required="true" />
+              <span class="form-error" id="contact-email-error" role="alert" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <label for="contact-subject" data-en="Subject" data-ar="الموضوع">Subject</label>
+              <select id="contact-subject" name="subject">
+                <option value="" data-en="Select a topic…" data-ar="اختر موضوعاً…">Select a topic…</option>
+                <option value="first-year" data-en="First Year Courses" data-ar="دورات الصف الأول">First Year Courses</option>
+                <option value="second-year" data-en="Second Year Courses" data-ar="دورات الصف الثاني">Second Year Courses</option>
+                <option value="third-year" data-en="Third Year Courses" data-ar="دورات الصف الثالث">Third Year Courses</option>
+                <option value="registration" data-en="Registration Help" data-ar="مساعدة في التسجيل">Registration Help</option>
+                <option value="other" data-en="Other" data-ar="أخرى">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contact-message" data-en="Message" data-ar="الرسالة">Message</label>
+              <textarea id="contact-message" name="message" rows="5" required
+                        aria-required="true"></textarea>
+              <span class="form-error" id="contact-message-error" role="alert" aria-live="polite"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="contact-submit">
+              <span data-en="Send Message" data-ar="إرسال الرسالة">Send Message</span>
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <!-- Success state -->
+            <div class="form-success" id="contact-success" hidden>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <p data-en="Message sent! I'll reply within 24 hours." data-ar="تم إرسال الرسالة! سأرد خلال 24 ساعة.">Message sent! I'll reply within 24 hours.</p>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+    <!-- /CONTACT -->
+
+  </main>
+  <!-- /MAIN -->
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <a href="index.html" class="nav-brand" aria-label="Go to homepage">
+          <div class="brand-icon" aria-hidden="true">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="10" fill="currentColor" opacity="0.12"/>
+              <path d="M18 8 L18 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M7 12 Q12.5 9 18 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M7 18 Q12.5 15 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M7 24 Q12.5 21 18 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M29 12 Q23.5 9 18 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M29 18 Q23.5 15 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M29 24 Q23.5 21 18 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name" data-en="Mr. Ahmed Hassan" data-ar="أ. أحمد حسن">Mr. Ahmed Hassan</span>
+            <span class="brand-subtitle" data-en="Educational Platform" data-ar="المنصة التعليمية">Educational Platform</span>
+          </div>
+        </a>
+        <p class="footer-tagline"
+           data-en="Empowering students with knowledge, one lesson at a time."
+           data-ar="تمكين الطلاب بالمعرفة، درساً في كل مرة.">
+          Empowering students with knowledge, one lesson at a time.
+        </p>
+      </div>
+
+      <div class="footer-links-group">
+        <h3 class="footer-links-title" data-en="Courses" data-ar="الدورات">Courses</h3>
+        <ul role="list">
+          <li><a href="pages/first-year.html" data-en="First Year" data-ar="الصف الأول">First Year</a></li>
+          <li><a href="pages/second-year.html" data-en="Second Year" data-ar="الصف الثاني">Second Year</a></li>
+          <li><a href="pages/third-year.html" data-en="Third Year" data-ar="الصف الثالث">Third Year</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-group">
+        <h3 class="footer-links-title" data-en="Platform" data-ar="المنصة">Platform</h3>
+        <ul role="list">
+          <li><a href="#about" data-en="About the Teacher" data-ar="عن المعلم">About the Teacher</a></li>
+          <li><a href="#testimonials" data-en="Student Reviews" data-ar="تقييمات الطلاب">Student Reviews</a></li>
+          <li><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+          <li><a href="pages/login.html" data-en="Login" data-ar="تسجيل الدخول">Login</a></li>
+          <li><a href="pages/register.html" data-en="Register" data-ar="التسجيل">Register</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-group">
+        <h3 class="footer-links-title" data-en="Contact" data-ar="التواصل">Contact</h3>
+        <ul role="list">
+          <li><a href="mailto:ahmed.hassan@edu.example.com">ahmed.hassan@edu.example.com</a></li>
+          <li><a href="tel:+201234567890">+20 123 456 7890</a></li>
+          <li><span data-en="Cairo, Egypt" data-ar="القاهرة، مصر">Cairo, Egypt</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="footer-copy">
+          <span data-en="© 2025 Mr. Ahmed Hassan. All rights reserved." data-ar="© 2025 أ. أحمد حسن. جميع الحقوق محفوظة.">
+            © 2025 Mr. Ahmed Hassan. All rights reserved.
+          </span>
+        </p>
+        <div class="footer-bottom-controls">
+          <button class="ctrl-btn lang-toggle" id="footer-lang-toggle" aria-label="Switch language">
+            <span id="footer-lang-label">عربي</span>
+          </button>
+          <button class="ctrl-btn theme-toggle" id="footer-theme-toggle" aria-label="Toggle dark mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <!-- /FOOTER -->
+
+
+  <!-- ═══════════════════════════════════════════
+       SCROLL TO TOP BUTTON
+  ═══════════════════════════════════════════ -->
+  <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top" hidden>
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M18 15l-6-6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+
+  <!-- ═══════════════════════════════════════════
+       JAVASCRIPT (Phases 4+)
+  ═══════════════════════════════════════════ -->
+  <script src="js/darkmode.js" defer></script>
+  <script src="js/language.js" defer></script>
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>

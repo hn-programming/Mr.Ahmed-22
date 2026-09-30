@@ -1,0 +1,473 @@
+/* ═══════════════════════════════════════════════════════════════════
+   responsive.css  —  Mr. Ahmed Hassan | Educational Platform
+   Phase 3: Responsive breakpoints & RTL refinements
+   ═══════════════════════════════════════════════════════════════════ */
+
+
+/* ───────────────────────────────────────────────────────────────────
+   TABLE OF CONTENTS
+   01. Breakpoint Reference
+   02. Large Desktop (>1440px) — fluid scaling
+   03. Desktop / Laptop (1024px–1280px)
+   04. Tablet (768px–1024px)
+   05. Mobile Large (576px–768px)
+   06. Mobile Small (<576px)
+   07. Extra Small (<375px)
+   08. Landscape / Short-viewport adjustments
+   09. Print Styles
+   ─────────────────────────────────────────────────────────────────── */
+
+
+/* ───────────────────────────────────────────────────────────────────
+   01. BREAKPOINT REFERENCE
+   1280px — large desktop → desktop
+   1024px — desktop → tablet (nav switches to hamburger)
+   768px  — tablet → mobile (grids collapse to single/double column)
+   576px  — mobile large → mobile small
+   375px  — mobile small → extra small
+   ─────────────────────────────────────────────────────────────────── */
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   02. LARGE DESKTOP (≥1440px)
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media (min-width: 1440px) {
+  .container { max-width: 1320px; }
+
+  .hero-inner { gap: var(--space-4xl); }
+
+  .testimonials-track { grid-template-columns: repeat(4, 1fr); }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   03. DESKTOP / LAPTOP (1024px – 1280px)
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1280px) {
+  :root {
+    --container-pad: 1.5rem;
+  }
+
+  .hero-inner {
+    gap: var(--space-3xl);
+  }
+
+  .years-grid,
+  .features-grid {
+    gap: var(--space-lg);
+  }
+
+  .testimonials-track {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  .contact-inner {
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--space-2xl);
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   04. TABLET (≤1024px)
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+
+  :root {
+    --nav-height: 68px;
+  }
+
+  /* — Navigation switches to hamburger — */
+  .nav-links { display: none; }
+
+  .nav-controls { gap: var(--space-xs); }
+
+  .hamburger { display: flex; }
+
+  .nav-controls .btn.btn-outline.btn-sm { display: none; }
+
+  /* — Hero — */
+  .hero { min-height: auto; padding-block: var(--space-3xl); }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+    text-align: center;
+  }
+
+  .hero-content { align-items: center; }
+
+  .hero-description { max-width: 56ch; }
+
+  .hero-actions { justify-content: center; }
+
+  .hero-stats { justify-content: center; }
+
+  .hero-visual { order: -1; max-width: 420px; margin-inline: auto; }
+
+  .hero-card--lesson { left: -4%; }
+  .hero-card--score   { right: -4%; }
+
+  .scroll-indicator { display: none; }
+
+  /* — Years grid → 2 columns, 3rd spans both — */
+  .years-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .years-grid .year-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    margin-inline: auto;
+  }
+
+  /* — Features grid → 2 columns — */
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* — About — */
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .about-visual {
+    max-width: 420px;
+    margin-inline: auto;
+  }
+
+  .about-content { text-align: center; align-items: center; }
+
+  .about-credentials { width: 100%; max-width: 480px; }
+
+  .credential { text-align: start; }
+
+  /* — Testimonials → 2 columns — */
+  .testimonials-track {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* — Contact — */
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .contact-form-wrapper { max-width: 640px; margin-inline: auto; width: 100%; }
+
+  /* — Footer — */
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .footer-brand { grid-column: 1 / -1; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   05. MOBILE LARGE (≤768px)
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  :root {
+    --nav-height: 64px;
+    --section-pad-y: clamp(2.5rem, 10vw, 3.5rem);
+  }
+
+  .container { padding-inline: 1.25rem; }
+
+  /* — Brand: hide subtitle on very tight header — */
+  .brand-subtitle { display: none; }
+
+  .brand-icon { width: 34px; height: 34px; }
+
+  /* — Hero — */
+  .hero-heading { font-size: clamp(2rem, 9vw, 2.75rem); }
+
+  .hero-description { font-size: var(--fs-base); }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin-inline: auto;
+  }
+
+  .hero-actions .btn { width: 100%; }
+
+  .hero-stats {
+    width: 100%;
+    justify-content: space-between;
+    gap: var(--space-sm);
+  }
+
+  .hero-card--main { max-width: 300px; padding: var(--space-lg); }
+
+  .hero-card--float {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .hero-card--float svg { width: 20px; height: 20px; }
+
+  .hero-card--lesson { bottom: 6%; left: -2%; }
+  .hero-card--score   { top: 2%; right: -2%; }
+
+  /* — Announcement banner — */
+  .announcement-inner {
+    flex-direction: column;
+    gap: var(--space-xs);
+    text-align: center;
+  }
+
+  /* — Section headers — */
+  .section-header { margin-bottom: var(--space-2xl); }
+
+  .section-heading { font-size: clamp(1.6rem, 6vw, 2rem); }
+
+  /* — Years grid → single column — */
+  .years-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .years-grid .year-card:last-child {
+    max-width: 100%;
+  }
+
+  /* — Features grid → single column — */
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* — Testimonials → single column — */
+  .testimonials-track {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-track-wrapper {
+    margin-inline: calc(-1 * 1.25rem);
+    padding-inline: 1.25rem;
+  }
+
+  /* — CTA banner — */
+  .cta-banner-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin-inline: auto;
+  }
+
+  .cta-banner-actions .btn { width: 100%; }
+
+  /* — Contact form — */
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .contact-form-wrapper { padding: var(--space-lg); }
+
+  /* — Footer — */
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: var(--space-2xl);
+  }
+
+  .footer-brand { grid-column: auto; align-items: center; }
+
+  .footer-tagline { max-width: 40ch; margin-inline: auto; }
+
+  .footer-links-group { align-items: center; }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-md);
+  }
+
+  /* — Scroll-to-top — */
+  .scroll-top-btn {
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+    width: 44px;
+    height: 44px;
+  }
+
+  [dir="rtl"] .scroll-top-btn {
+    left: var(--space-lg);
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   06. MOBILE SMALL (≤576px)
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 576px) {
+
+  .container { padding-inline: 1rem; }
+
+  /* — Nav — */
+  .nav-container { gap: var(--space-md); }
+
+  .brand-name { font-size: var(--fs-xs); }
+
+  .ctrl-btn { width: 34px; height: 34px; }
+
+  .lang-toggle .lang-label { font-size: 0.7rem; }
+
+  .mobile-menu { padding-inline: 1rem; }
+
+  /* — Hero — */
+  .hero-eyebrow { font-size: var(--fs-xs); }
+
+  .hero-heading { font-size: 1.85rem; }
+
+  .hero-visual { max-width: 280px; }
+
+  .hero-card--main { max-width: 100%; }
+
+  .hcard-header { gap: var(--space-sm); }
+
+  .hcard-avatar { width: 52px; height: 52px; }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    row-gap: var(--space-md);
+  }
+
+  .stat-divider { display: none; }
+
+  .stat-item { flex: 1 1 30%; align-items: center; text-align: center; }
+
+  /* — Year cards — */
+  .year-card-inner { padding: var(--space-lg); }
+
+  .year-card-title { font-size: var(--fs-lg); }
+
+  /* — Feature cards — */
+  .feature-card { padding: var(--space-lg); }
+
+  /* — About — */
+  .about-credentials { padding: var(--space-md); }
+
+  .credential { gap: var(--space-sm); }
+
+  .about-chip {
+    padding: 0.45rem 0.75rem;
+  }
+
+  .about-chip strong { font-size: var(--fs-base); }
+  .about-chip span { font-size: 0.65rem; }
+
+  /* — Testimonials — */
+  .testimonial-card { padding: var(--space-lg); }
+
+  .testimonials-controls { gap: var(--space-sm); }
+
+  /* — CTA — */
+  .cta-banner-heading { font-size: 1.75rem; }
+
+  .cta-banner-sub { font-size: var(--fs-sm); }
+
+  /* — Contact — */
+  .contact-links { gap: var(--space-xs); }
+
+  .contact-link { padding: 0.7rem 0.85rem; font-size: var(--fs-xs); }
+
+  .contact-link-icon { width: 34px; height: 34px; }
+
+  .contact-link-icon svg { width: 17px; height: 17px; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   07. EXTRA SMALL (≤375px)
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 375px) {
+
+  :root { --container-pad: 0.85rem; }
+
+  .brand-text { display: none; }
+
+  .hero-heading { font-size: 1.6rem; }
+
+  .hero-description { font-size: var(--fs-sm); }
+
+  .hero-card--float { display: none; }
+
+  .stat-item { flex: 1 1 100%; flex-direction: row; gap: var(--space-xs); justify-content: center; }
+
+  .btn-lg { padding: 0.75rem 1.4rem; font-size: var(--fs-sm); }
+
+  .about-chip { position: static; margin-top: var(--space-sm); display: inline-flex; flex-direction: row; gap: 6px; }
+
+  .about-chip--1, .about-chip--2 { position: static; }
+
+  .section-heading { font-size: 1.5rem; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   08. LANDSCAPE / SHORT-VIEWPORT ADJUSTMENTS
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media (max-height: 580px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding-block: var(--space-2xl);
+  }
+
+  .scroll-indicator { display: none; }
+
+  #loading-screen .loader-inner { gap: var(--space-md); }
+
+  .loader-logo { width: 56px; height: 56px; }
+}
+
+/* Mobile menu height cap on short viewports */
+@media (max-width: 1024px) and (max-height: 700px) {
+  .mobile-menu {
+    max-height: calc(100svh - var(--nav-height));
+    overflow-y: auto;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   09. PRINT STYLES
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media print {
+  #loading-screen,
+  .site-header,
+  .announcement-banner,
+  .mobile-menu,
+  .scroll-top-btn,
+  .hero-grid-bg,
+  .cta-banner-section,
+  .testimonials-controls,
+  .contact-form-wrapper,
+  .site-footer {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  .section { padding-block: var(--space-lg); }
+
+  a { text-decoration: underline; }
+}
